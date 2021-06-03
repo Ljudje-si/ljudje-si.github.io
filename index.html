@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OOO experiments</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            color: white;
+            padding: 40px;
+        }
+
+        p,
+        a,
+        h1,
+        h2,
+        h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        a:link,
+        a:visited {
+            color: white;
+        }
+
+        .rotate {
+            animation: rotation 2s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="margin-bottom: 16px;">Ljudje digital experiments directory</h1>
+    <h2>Brumen X</h2>
+    <a href="randomBorders.html" target="_blank" rel="noopener noreferrer">Random borders</a>
+
+    <p style="position: fixed; bottom:40px; right: 40px;">Ljudje ©2021</p>
+    <img id="ljudje-logo"
+        src="https://assets.website-files.com/60350f45f6081010b04ff2c1/603515842bcbb298b9d02561_ljudje_logo-white.svg"
+        style="position: fixed; top:80px; right: 80px; width: 100px; animation: rotation 3s infinite linear;">
+
+    <script>
+        var animationSpeed = 3
+        window.addEventListener('click', function () {
+            animationSpeed = animationSpeed - 0.1
+            document.getElementById("ljudje-logo").style.animation = "rotation " + animationSpeed + "s infinite linear"
+        })
+    </script>
+
+</body>
+
+</html>
