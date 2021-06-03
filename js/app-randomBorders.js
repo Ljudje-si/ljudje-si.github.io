@@ -56,3 +56,7 @@ document.getElementById("button_randomize_auto").addEventListener('click', funct
 window.addEventListener('keydown', function () {
     x_lines.forEach(item => randomLine(item))
 })
+
+window.addEventListener('click', function () {
+    x_lines.forEach(item => randomLine(item))
+})
