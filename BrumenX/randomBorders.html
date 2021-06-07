@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brumen X</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+        }
+
+        .line-default {
+            height: 1px;
+            border-bottom: 1px solid white;
+            position: fixed;
+            top: 0px;
+            width: 30000px;
+        }
+
+        .navigation-plate {
+            position: fixed;
+            background-color: black;
+            top: 24px;
+            padding: 16px;
+            left: 24px;
+            z-index: 5;
+            width: 250px;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .navigation-plate,
+        .navigation-plate * {
+            opacity: 35%;
+        }
+
+        .navigation-plate:hover {
+            opacity: 100%;
+        }
+
+        .navigation-plate:hover>* {
+            opacity: 100%;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 4px 8px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: black;">
+
+    <div class="navigation-plate">
+        <p style="margin-bottom: 16px;">Press any key to randomize or click on
+            these buttons if that's more you thing.
+        </p>
+        <button id="button_randomize">Randomize</button> <br>
+        <button id="button_randomize_auto" style="margin-top: 8px;">Auto randomize</button>
+    </div>
+
+    <div id="x_line_left" type="x_line" class="line-default" style="transform-origin: top left; left: 0px;"></div>
+    <div id="x_line_right" type="x_line" class="line-default" style="transform-origin: top right; right: 0px"></div>
+
+    <script src="js/app-randomBorders.js"></script>
+
+</body>
+
+</html>
