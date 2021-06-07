@@ -10,6 +10,8 @@ var tangesBot = canvasWidth / canvasHeight
 var paddingHor = (x_widht / 2) / (Math.sin(Math.atan(tangesTop)))
 var paddingVer = (x_widht / 2) / (Math.sin(Math.atan(tangesBot)))
 
+var animatedObjects = []
+
 // empty triangles set-up
 // top
 var etT_1_x = paddingHor
@@ -118,7 +120,7 @@ function draw() {
     d_y1 = random(canvasHeight)
   }
 
-  var drawing_options = ["line", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+  var drawing_options = ["line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
   var drawing_option = drawing_options[Math.floor(Math.random() * drawing_options.length)];
 
   if (drawing_option == "circle") {
@@ -164,7 +166,7 @@ function draw() {
     fill(random(255), random(255), random(255))
     var triWidth = random(100)
     var triHeight = random(100)
-    triangle(d_x1, d_y1, d_x1+(triWidth/2), d_y1+(triHeight), d_x1-(triWidth/2), d_y1+(triHeight))
+    triangle(d_x1, d_y1, d_x1 + (triWidth / 2), d_y1 + (triHeight), d_x1 - (triWidth / 2), d_y1 + (triHeight))
   }
 
   if (drawing_option == "line") {
@@ -214,6 +216,71 @@ function draw() {
     line(l_x1, l_y1, l_x2, l_y2);
 
   }
+
+  if (drawing_option == "line_curved") {
+
+    var lc_num = 8
+    var points = [];
+    var lc_x = d_x1
+    var lc_y = d_y1
+    points[0] = createVector(lc_x, lc_y);
+
+    for (var i = 1; i < lc_num; i++) {
+
+      if ((points[i - 1].x <= canvasWidth / 2) && (points[i - 1].y <= canvasHeight / 2)) {
+        var lc_x = random(canvasWidth / 2, canvasWidth)
+        var lc_y = random(canvasHeight / 2, canvasHeight)
+        while (isInsideX(lc_x, lc_y)) {
+          lc_x = random(canvasWidth / 2, canvasWidth)
+          lc_y = random(canvasHeight / 2, canvasHeight)
+        }
+
+      }
+
+      if ((points[i - 1].x > canvasWidth / 2) && (points[i - 1].y <= canvasHeight / 2)) {
+        var lc_x = random(canvasWidth / 2)
+        var lc_y = random(canvasHeight / 2, canvasHeight)
+        while (isInsideX(lc_x, lc_y)) {
+          lc_x = random(canvasWidth / 2)
+          lc_y = random(canvasHeight / 2, canvasHeight)
+        }
+      }
+
+      if ((points[i - 1].x > canvasWidth / 2) && (points[i - 1].y > canvasHeight / 2)) {
+        var lc_x = random(canvasWidth / 2)
+        var lc_y = random(canvasHeight / 2)
+        while (isInsideX(lc_x, lc_y)) {
+          lc_x = random(canvasWidth / 2)
+          lc_y = random(canvasHeight / 2)
+        }
+      }
+
+      if ((points[i - 1].x <= canvasWidth / 2) && (points[i - 1].y > canvasHeight / 2)) {
+        var lc_x = random(canvasWidth / 2, canvasWidth)
+        var lc_y = random(canvasHeight / 2)
+        while (isInsideX(lc_x, lc_y)) {
+          lc_x = random(canvasWidth / 2, canvasWidth)
+          lc_y = random(canvasHeight / 2)
+        }
+      }
+
+      points[i] = createVector(lc_x, lc_y);
+    }
+
+    stroke(random(255), random(255), random(255));
+    noFill();
+    strokeWeight(random(10));
+
+    for (var i = 0; i < lc_num - 3; i++) {
+      beginShape();
+      curveVertex(points[i].x, points[i].y);
+      curveVertex(points[i + 1].x, points[i + 1].y);
+      curveVertex(points[i + 2].x, points[i + 2].y);
+      curveVertex(points[i + 3].x, points[i + 3].y);
+      endShape();
+    }
+  }
+
 
   /*   noFill()
     stroke(255)
