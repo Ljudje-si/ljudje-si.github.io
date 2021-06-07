@@ -293,3 +293,7 @@ function draw() {
 
 }
 
+function keyPressed() {
+  noLoop();
+}
+
