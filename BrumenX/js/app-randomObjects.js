@@ -269,7 +269,7 @@ function draw() {
 
     stroke(random(255), random(255), random(255));
     noFill();
-    strokeWeight(random(10));
+    strokeWeight(random(3));
 
     for (var i = 0; i < lc_num - 3; i++) {
       beginShape();
