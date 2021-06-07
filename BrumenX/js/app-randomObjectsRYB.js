@@ -287,7 +287,6 @@ function draw() {
     }
   }
 
-
   /*   noFill()
     stroke(255)
     triangle(etT_1_x, etT_1_y, etT_2_x, etT_2_y, etT_3_x, etT_3_y);
@@ -295,5 +294,9 @@ function draw() {
     triangle(etL_1_x, etL_1_y, etL_2_x, etL_2_y, etL_3_x, etL_3_y);
     triangle(etB_1_x, etB_1_y, etB_2_x, etB_2_y, etB_3_x, etB_3_y); */
 
+}
+
+function keyPressed() {
+  noLoop();
 }
 
