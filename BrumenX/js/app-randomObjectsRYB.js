@@ -273,7 +273,7 @@ function draw() {
 
     stroke(RYBcolors[Math.floor(Math.random() * RYBcolors.length)]);
     noFill();
-    strokeWeight(random(10));
+    strokeWeight(random(3));
 
     for (var i = 0; i < lc_num - 3; i++) {
       beginShape();
