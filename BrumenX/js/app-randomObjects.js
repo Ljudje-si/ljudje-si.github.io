@@ -120,7 +120,9 @@ function draw() {
     d_y1 = random(canvasHeight)
   }
 
-  var drawing_options = ["line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+  var drawing_options = ["line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+    "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+    "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
   var drawing_option = drawing_options[Math.floor(Math.random() * drawing_options.length)];
 
   if (drawing_option == "circle") {
