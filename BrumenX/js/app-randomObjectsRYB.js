@@ -102,6 +102,7 @@ function setup() {
   frameRate(5)
   strokeWeight(5);
   background(0);
+  rectMode(CENTER);
   document.getElementById("defaultCanvas0").style.display = "block"
 }
 
