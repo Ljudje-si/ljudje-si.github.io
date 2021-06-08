@@ -97,17 +97,18 @@ function isInsideX(l_x, l_y) {
 }
 
 
-// draws
+// setup
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   frameRate(5)
   strokeWeight(5);
   background(0);
+  rectMode(CENTER);
   document.getElementById("defaultCanvas0").style.display = "block"
 }
 
-// mousePressed
+// draws
 
 function draw() {
 
