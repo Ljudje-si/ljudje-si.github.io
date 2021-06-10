@@ -139,6 +139,17 @@ function randomImage(d_x1, d_y1) {
   }
 }
 
+function randomImageP5(d_x1, d_y1) {
+  console.log("image")
+  var randomImageWidth = Math.floor(Math.random() * 10) * 10 + 10
+  var randomImageHeight = Math.floor(Math.random() * 10) * 10 + 10
+  var randomImageURL = "https://picsum.photos/id/" + Math.floor(Math.random() * 1000) + "/" + randomImageWidth + "/" + randomImageHeight
+  console.log(randomImageURL)
+
+  var randomImage = loadImage(String(randomImageURL));
+  image(randomImage, d_x1, d_y1);
+}
+
 // draws
 
 function draw() {
@@ -205,6 +216,7 @@ function draw() {
 
   if (drawing_option == "image") {
     randomImage(d_x1, d_y1)
+    //randomImageP5(d_x1, d_y1)
   }
 
   if (drawing_option == "line") {
