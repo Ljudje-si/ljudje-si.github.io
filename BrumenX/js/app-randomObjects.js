@@ -121,9 +121,9 @@ function draw() {
     d_y1 = random(canvasHeight)
   }
 
-    var drawing_options = ["line", "line_curved", "blob", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
-      "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
-      "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+  var drawing_options = ["blob", "line", "line_curved", "blob", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+    "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+    "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 
   var drawing_option = drawing_options[Math.floor(Math.random() * drawing_options.length)];
 
@@ -285,6 +285,43 @@ function draw() {
     }
   }
 
+  if (drawing_option == "blob") {
+
+    console.log("blob")
+
+    var lc_num = 24
+    var blob_rad = 100
+    var points = [];
+    var lc_x = d_x1
+    var lc_y = d_y1
+    var lc_center = createVector(lc_x, lc_y);
+    points[0] = lc_center
+
+    for (var i = 1; i < lc_num; i++) {
+
+      var lc_x = random(lc_center.x, lc_center.x + blob_rad)
+      var lc_y = random(lc_center.y, lc_center.y + blob_rad)
+      while (isInsideX(lc_x, lc_y)) {
+        var lc_x = random(lc_center.x, lc_center.x + blob_rad)
+        var lc_y = random(lc_center.y, lc_center.y + blob_rad)
+      }
+
+      points[i] = createVector(lc_x, lc_y);
+    }
+
+    noStroke();
+    fill(random(255), random(255), random(255));
+
+    for (var i = 0; i < lc_num - 3; i++) {
+      beginShape();
+      curveVertex(points[i].x, points[i].y);
+      curveVertex(points[i + 1].x, points[i + 1].y);
+      curveVertex(points[i + 2].x, points[i + 2].y);
+      curveVertex(points[i + 3].x, points[i + 3].y);
+      endShape(CLOSE);
+    }
+  }
+
 
   /*   noFill()
     stroke(255)
@@ -298,5 +335,13 @@ function draw() {
 function keyPressed() {
   console.log("drawing stopped")
   noLoop();
+}
+
+function mousePressed() {
+  noLoop();
+}
+
+function mouseReleased() {
+  loop()
 }
 
