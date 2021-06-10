@@ -101,7 +101,7 @@ function isInsideX(l_x, l_y) {
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
-  frameRate(5)
+  frameRate(300)
   strokeWeight(5);
   background(0);
   rectMode(CENTER);
@@ -121,9 +121,10 @@ function draw() {
     d_y1 = random(canvasHeight)
   }
 
-  var drawing_options = ["line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
-    "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
-    "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+    var drawing_options = ["line", "line_curved", "blob", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+      "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+      "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+
   var drawing_option = drawing_options[Math.floor(Math.random() * drawing_options.length)];
 
   if (drawing_option == "circle") {
@@ -295,6 +296,7 @@ function draw() {
 }
 
 function keyPressed() {
+  console.log("drawing stopped")
   noLoop();
 }
 
