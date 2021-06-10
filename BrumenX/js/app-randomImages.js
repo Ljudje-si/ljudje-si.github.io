@@ -174,3 +174,11 @@ function keyPressed() {
   noLoop();
 }
 
+function mousePressed() {
+  noLoop();
+}
+
+function mouseReleased() {
+  loop()
+}
+
