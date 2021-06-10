@@ -120,6 +120,7 @@ function cancelImage(img) {
 function randomImage(d_x1, d_y1) {
   var randomImageWidth = Math.floor(Math.random() * 10) * 10 + 10
   var randomImageHeight = Math.floor(Math.random() * 10) * 10 + 10
+
   var randomImageURL = "https://picsum.photos/id/" + Math.floor(Math.random() * 1000) + "/" + randomImageWidth + "/" + randomImageHeight
   console.log(randomImageURL)
 
@@ -128,7 +129,7 @@ function randomImage(d_x1, d_y1) {
   randomImage.style.position = "fixed"
   randomImage.style.left = String(round(d_x1 - (randomImageWidth / 2)) + "px")
   randomImage.style.top = String(round(d_y1 - (randomImageHeight / 2)) + "px")
-  randomImage.style.zIndex = "10";
+  randomImage.style.zIndex = String(randomImageWidth*randomImageHeight);
   document.body.appendChild(randomImage);
   randomImage.setAttribute("onError", "cancelImage(this)");
 
