@@ -99,6 +99,24 @@ function isInsideX(l_x, l_y) {
 
 // setup
 
+var logo1
+var logo2
+var logo3
+var logo4
+var logo5
+var logo6
+var logo7
+var logo8
+var logo9
+var logo10
+var logo11
+var logo12
+var logo13
+var logo14
+var logo15
+var logo16
+var logos
+
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   frameRate(300)
@@ -163,7 +181,7 @@ function draw() {
     d_y1 = random(canvasHeight)
   }
 
-  var drawing_options = ["blob", "image", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+  var drawing_options = ["blob", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
     "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
     "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
   var drawing_option = drawing_options[Math.floor(Math.random() * drawing_options.length)];
