@@ -3,6 +3,8 @@ console.log("app connected")
 var x_widht = 200
 var canvasHeight = window.innerHeight
 var canvasWidth = window.innerWidth
+var canvasHeightMargin = 0
+var canvasWidthMargin = 0
 
 var tangesTop = canvasHeight / canvasWidth
 var tangesBot = canvasWidth / canvasHeight
@@ -14,47 +16,51 @@ var animatedObjects = []
 
 // empty triangles set-up
 // top
-var etT_1_x = paddingHor
-var etT_1_y = 0
+var etT_1_x = paddingHor + canvasWidthMargin
+var etT_1_y = canvasHeightMargin
 
-var etT_2_x = canvasWidth - paddingHor
-var etT_2_y = 0
+var etT_2_x = canvasWidth - paddingHor - canvasWidthMargin
+var etT_2_y = canvasHeightMargin
 
 var etT_3_x = canvasWidth / 2
-var etT_3_y = tangesTop * ((canvasWidth - (2 * paddingHor)) / 2)
+var etT_3_y = (tangesTop * ((canvasWidth - (2 * (paddingHor + canvasWidthMargin))) / 2)) + canvasHeightMargin
 
 //right
 
-var etR_1_x = canvasWidth
-var etR_1_y = paddingVer
+var etR_1_x = canvasWidth - canvasWidthMargin
+var etR_1_y = paddingVer + canvasHeightMargin
 
-var etR_2_x = canvasWidth
-var etR_2_y = canvasHeight - paddingVer
+var etR_2_x = canvasWidth - canvasWidthMargin
+var etR_2_y = canvasHeight - paddingVer - canvasHeightMargin
 
-var etR_3_x = canvasWidth - (((canvasHeight - (2 * paddingVer)) / 2) * tangesBot)
+var etR_3_x = canvasWidth - (((canvasHeight - (2 * (paddingVer + canvasHeightMargin))) / 2) * tangesBot) - canvasWidthMargin
 var etR_3_y = canvasHeight / 2
 
 //left
 
-var etL_1_x = 0
-var etL_1_y = paddingVer
+var etL_1_x = canvasWidthMargin
+var etL_1_y = paddingVer + canvasHeightMargin
 
-var etL_2_x = 0
-var etL_2_y = canvasHeight - paddingVer
+var etL_2_x = canvasWidthMargin
+var etL_2_y = canvasHeight - paddingVer - canvasHeightMargin
 
-var etL_3_x = ((canvasHeight - (2 * paddingVer)) / 2) * tangesBot
+var etL_3_x = (((canvasHeight - (2 * (paddingVer + canvasHeightMargin))) / 2) * tangesBot) + canvasWidthMargin
 var etL_3_y = canvasHeight / 2
 
 //bottom
 
-var etB_1_x = paddingHor
-var etB_1_y = canvasHeight
+var etB_1_x = paddingHor + canvasWidthMargin
+var etB_1_y = canvasHeight - canvasHeightMargin
 
-var etB_2_x = canvasWidth - paddingHor
-var etB_2_y = canvasHeight
+var etB_2_x = canvasWidth - paddingHor - canvasWidthMargin
+var etB_2_y = canvasHeight - canvasHeightMargin
 
 var etB_3_x = canvasWidth / 2
-var etB_3_y = canvasHeight - (tangesTop * ((canvasWidth - (2 * paddingHor)) / 2))
+var etB_3_y = canvasHeight - (tangesTop * ((canvasWidth - (2 * (paddingHor + canvasWidthMargin))) / 2))
+
+// limits
+var etT_3_y_org = tangesTop * ((canvasWidth - (2 * paddingHor)) / 2)
+var etL_3_x_org = ((canvasHeight - (2 * paddingVer)) / 2) * tangesBot
 
 
 /* A utility function to calculate area of triangle formed by (x1, y1),
@@ -367,7 +373,6 @@ function hlines(start, end) {
 }
 
 function scatter() {
-  console.log("duplicate")
   loadPixels()
   var blackColor = color(0, 0, 0);
   var whiteColor = color(255, 255, 255);
@@ -403,6 +408,152 @@ function hgradient() {
   updatePixels()
 }
 
+function changeX(draw) {
+
+  x_widht = random(200)
+  canvasWidthMargin = random(etL_3_x_org - x_widht)
+  console.log("canvasWidthMargin: " + canvasWidthMargin)
+  canvasHeightMargin = random(etT_3_y_org - x_widht)
+  console.log("canvasHeightMargin: " + canvasHeightMargin)
+
+  etT_1_x = paddingHor + canvasWidthMargin
+  etT_1_y = canvasHeightMargin
+
+  etT_2_x = canvasWidth - paddingHor - canvasWidthMargin
+  etT_2_y = canvasHeightMargin
+
+  etT_3_x = canvasWidth / 2
+  etT_3_y = (tangesTop * ((canvasWidth - (2 * (paddingHor + canvasWidthMargin))) / 2)) + canvasHeightMargin
+
+  //right
+
+  etR_1_x = canvasWidth - canvasWidthMargin
+  etR_1_y = paddingVer + canvasHeightMargin
+
+  etR_2_x = canvasWidth - canvasWidthMargin
+  etR_2_y = canvasHeight - paddingVer - canvasHeightMargin
+
+  etR_3_x = canvasWidth - (((canvasHeight - (2 * (paddingVer + canvasHeightMargin))) / 2) * tangesBot) - canvasWidthMargin
+  etR_3_y = canvasHeight / 2
+
+  //left
+
+  etL_1_x = canvasWidthMargin
+  etL_1_y = paddingVer + canvasHeightMargin
+
+  etL_2_x = canvasWidthMargin
+  etL_2_y = canvasHeight - paddingVer - canvasHeightMargin
+
+  etL_3_x = (((canvasHeight - (2 * (paddingVer + canvasHeightMargin))) / 2) * tangesBot) + canvasWidthMargin
+  etL_3_y = canvasHeight / 2
+
+  //bottom
+
+  etB_1_x = paddingHor + canvasWidthMargin
+  etB_1_y = canvasHeight - canvasHeightMargin
+
+  etB_2_x = canvasWidth - paddingHor - canvasWidthMargin
+  etB_2_y = canvasHeight - canvasHeightMargin
+
+  etB_3_x = canvasWidth / 2
+  etB_3_y = canvasHeight - (tangesTop * ((canvasWidth - (2 * (paddingHor + canvasWidthMargin))) / 2)) - canvasHeightMargin
+
+  if (draw == 1) {
+    fill(random(255), random(255), random(255))
+    noStroke()
+    triangle(etT_1_x, etT_1_y, etT_2_x, etT_2_y, etT_3_x, etT_3_y);
+    triangle(etR_1_x, etR_1_y, etR_2_x, etR_2_y, etR_3_x, etR_3_y);
+    triangle(etL_1_x, etL_1_y, etL_2_x, etL_2_y, etL_3_x, etL_3_y);
+    triangle(etB_1_x, etB_1_y, etB_2_x, etB_2_y, etB_3_x, etB_3_y);
+  }
+
+}
+
+function FixX() {
+
+  x_widht = 200
+  canvasWidthMargin = 0
+  canvasHeightMargin = 0
+
+  etT_1_x = paddingHor + canvasWidthMargin
+  etT_1_y = canvasHeightMargin
+
+  etT_2_x = canvasWidth - paddingHor - canvasWidthMargin
+  etT_2_y = canvasHeightMargin
+
+  etT_3_x = canvasWidth / 2
+  etT_3_y = (tangesTop * ((canvasWidth - (2 * (paddingHor + canvasWidthMargin))) / 2)) + canvasHeightMargin
+
+  //right
+
+  etR_1_x = canvasWidth - canvasWidthMargin
+  etR_1_y = paddingVer + canvasHeightMargin
+
+  etR_2_x = canvasWidth - canvasWidthMargin
+  etR_2_y = canvasHeight - paddingVer - canvasHeightMargin
+
+  etR_3_x = canvasWidth - (((canvasHeight - (2 * (paddingVer + canvasHeightMargin))) / 2) * tangesBot) - canvasWidthMargin
+  etR_3_y = canvasHeight / 2
+
+  //left
+
+  etL_1_x = canvasWidthMargin
+  etL_1_y = paddingVer + canvasHeightMargin
+
+  etL_2_x = canvasWidthMargin
+  etL_2_y = canvasHeight - paddingVer - canvasHeightMargin
+
+  etL_3_x = (((canvasHeight - (2 * (paddingVer + canvasHeightMargin))) / 2) * tangesBot) + canvasWidthMargin
+  etL_3_y = canvasHeight / 2
+
+  //bottom
+
+  etB_1_x = paddingHor + canvasWidthMargin
+  etB_1_y = canvasHeight - canvasHeightMargin
+
+  etB_2_x = canvasWidth - paddingHor - canvasWidthMargin
+  etB_2_y = canvasHeight - canvasHeightMargin
+
+  etB_3_x = canvasWidth / 2
+  etB_3_y = canvasHeight - (tangesTop * ((canvasWidth - (2 * (paddingHor + canvasWidthMargin))) / 2)) - canvasHeightMargin
+
+}
+
+function bezierX() {
+  bezier(x1, y1, x2, y2, x3, y3, x4, y4)
+}
+
+function blur() {
+  let v = 1.0 / random(20.0);
+  let kernel = [[v, v, v], [v, v, v], [v, v, v]];
+  
+
+  loadPixels();
+  
+  for (let x = 1; x < canvasWidth; x++) {
+    for (let y = 1; y < canvasHeight; y++) {
+      let sum = 0; 
+
+      for (kx = -1; kx <= 1; kx++) {
+        for (ky = -1; ky <= 1; ky++) {
+          let xpos = x + kx;
+          let ypos = y + ky;
+          
+          let val = red(get(xpos, ypos));
+
+          sum += kernel[kx+1][ky+1] * val;
+          console.log("working")
+        }
+      }
+
+      set(x, y, color(sum));
+    }
+  }
+  updatePixels();
+
+}
+
+
 function setup() {
 
   createCanvas(canvasWidth, canvasHeight);
@@ -419,7 +570,7 @@ function setup() {
 
 }
 
-var drawing_tools = ["save", "fixX", "changeX", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+var drawing_tools = ["blur", "save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 var drawing_tool = "xline"
 
 var drawCounter = 0
@@ -452,22 +603,27 @@ function draw() {
   drawCounter++
   x_widht = drawCounter * 3
 
+  if (drawing_tool == "blur") {
+    blur();
+    drawCounter = 101
+  }
+
   if (drawing_tool == "save") {
     saveCanvas('myCanvas', 'jpg');
     drawCounter = 101
   }
 
   if (drawing_tool == "fixX") {
-    canvasWidth = window.innerWidth
-    canvasHeight = window.innerHeight
-    x_widht = 300
+    FixX()
     drawCounter = 101
   }
 
+  if (drawing_tool == "changeXDraw") {
+    changeX(1)
+  }
+
   if (drawing_tool == "changeX") {
-    canvasWidth = random(500, window.innerWidth)
-    canvasHeight = random(500, window.innerHeight)
-    x_widht = random(300)
+    changeX(0)
     drawCounter = 101
   }
 
@@ -509,7 +665,6 @@ function draw() {
   }
 
   if (drawing_tool == "circle") {
-    console.log("circle")
     noStroke()
     fill(random(255), random(255), random(255))
     circle(d_x1, d_y1, random(100))
