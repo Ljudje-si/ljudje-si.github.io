@@ -570,7 +570,7 @@ function setup() {
 
 }
 
-var drawing_tools = ["blur", "save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+var drawing_tools = ["save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 var drawing_tool = "xline"
 
 var drawCounter = 0
@@ -603,10 +603,10 @@ function draw() {
   drawCounter++
   x_widht = drawCounter * 3
 
-  if (drawing_tool == "blur") {
+/*   if (drawing_tool == "blur") {
     blur();
     drawCounter = 101
-  }
+  } */
 
   if (drawing_tool == "save") {
     saveCanvas('myCanvas', 'jpg');
