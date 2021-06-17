@@ -566,7 +566,7 @@ function setup() {
 
 }
 
-var drawing_tools = ["triReset", "reset", "save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+var drawing_tools = ["resetWhite", "triReset", "reset", "save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 var drawing_tool = "xline"
 
 var drawCounter = 0
@@ -665,6 +665,11 @@ function draw() {
     triangle(etR_1_x, etR_1_y, etR_2_x, etR_2_y, etR_3_x, etR_3_y);
     triangle(etL_1_x, etL_1_y, etL_2_x, etL_2_y, etL_3_x, etL_3_y);
     triangle(etB_1_x, etB_1_y, etB_2_x, etB_2_y, etB_3_x, etB_3_y);
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "resetWhite") {
+    background(255);
     drawCounter = 101
   }
 
