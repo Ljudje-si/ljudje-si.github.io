@@ -684,7 +684,9 @@ function draw() {
     } */
 
   if (drawing_tool == "save") {
-    saveCanvas('myCanvas', 'jpg');
+    var newDate = new Date()
+    var saveDate = 'BrumenX' + '-' + newDate.getDate() + '.' + (newDate.getMonth() + 1) + '.' + newDate.getFullYear() + '-' + (newDate.getHours()+1) + 'h' + newDate.getMinutes() + 'm' + newDate.getSeconds() + 's'
+    saveCanvas(String(saveDate), 'jpg');
     drawCounter = 101
   }
 
