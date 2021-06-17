@@ -526,22 +526,22 @@ function bezierX() {
 function blur() {
   let v = 1.0 / random(20.0);
   let kernel = [[v, v, v], [v, v, v], [v, v, v]];
-  
+
 
   loadPixels();
-  
+
   for (let x = 1; x < canvasWidth; x++) {
     for (let y = 1; y < canvasHeight; y++) {
-      let sum = 0; 
+      let sum = 0;
 
       for (kx = -1; kx <= 1; kx++) {
         for (ky = -1; ky <= 1; ky++) {
           let xpos = x + kx;
           let ypos = y + ky;
-          
+
           let val = red(get(xpos, ypos));
 
-          sum += kernel[kx+1][ky+1] * val;
+          sum += kernel[kx + 1][ky + 1] * val;
           console.log("working")
         }
       }
@@ -580,9 +580,66 @@ var gp_x
 var gp_y
 var gpColor
 
-// draws
+//bouncing object
+var bounceX = 50;
+var bounceSpeedX = 5;
+var bounceY = 50;
+var bounceSpeedY = 5;
+var bounceXSize = 24
+var bounceXWeight = 5
+
+
+
+// ------- draws -------
 
 function draw() {
+
+  // bounce object
+
+  strokeCap(SQUARE);
+  strokeWeight(bounceXWeight);
+
+  fill(random(255), random(255), random(255));
+  noStroke();
+  stroke(random(255), random(255), random(255))
+  line(bounceX, bounceY, bounceX - (bounceXSize / 2), bounceY + (bounceXSize / 2))
+  line(bounceX, bounceY, bounceX + (bounceXSize / 2), bounceY - (bounceXSize / 2))
+  line(bounceX, bounceY, bounceX - (bounceXSize / 2), bounceY - (bounceXSize / 2))
+  line(bounceX, bounceY, bounceX + (bounceXSize / 2), bounceY + (bounceXSize / 2))
+
+  bounceX = bounceX + bounceSpeedX;
+  bounceY = bounceY + bounceSpeedY;
+
+  if (bounceX > canvasWidth - bounceXSize) {
+    bounceSpeedX = -6;
+    bounceXSize = random(100)
+    bounceXWeight = random(50)
+  }
+
+  if (bounceX < bounceXSize) {
+    bounceSpeedX = 6;
+    color(0, 0, 0, 0)
+    bounceXSize = random(100)
+    bounceXWeight = random(50)
+  }
+
+  if (bounceY > canvasHeight - bounceXSize) {
+    bounceSpeedY = -5;
+    color(0, 0, 0, 0)
+    bounceXSize = random(100)
+    bounceXWeight = random(50)
+  }
+
+  if (bounceY < bounceXSize) {
+    bounceSpeedY = 5;
+    color(0, 0, 0, 0)
+    bounceXSize = random(100)
+    bounceXWeight = random(50)
+  }
+
+  // random tool
+
+  strokeCap(ROUND);
 
   var d_x1 = random(canvasWidth)
   var d_y1 = random(canvasHeight)
@@ -603,10 +660,10 @@ function draw() {
   drawCounter++
   x_widht = drawCounter * 3
 
-/*   if (drawing_tool == "blur") {
-    blur();
-    drawCounter = 101
-  } */
+  /*   if (drawing_tool == "blur") {
+      blur();
+      drawCounter = 101
+    } */
 
   if (drawing_tool == "save") {
     saveCanvas('myCanvas', 'jpg');
