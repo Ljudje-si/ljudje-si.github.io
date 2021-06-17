@@ -519,10 +519,6 @@ function FixX() {
 
 }
 
-function bezierX() {
-  bezier(x1, y1, x2, y2, x3, y3, x4, y4)
-}
-
 function blur() {
   let v = 1.0 / random(20.0);
   let kernel = [[v, v, v], [v, v, v], [v, v, v]];
@@ -570,7 +566,7 @@ function setup() {
 
 }
 
-var drawing_tools = ["save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+var drawing_tools = ["triReset", "reset", "save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 var drawing_tool = "xline"
 
 var drawCounter = 0
@@ -587,6 +583,7 @@ var bounceY = 50;
 var bounceSpeedY = 5;
 var bounceXSize = 24
 var bounceXWeight = 5
+var bounceXMaxWeight = 30
 
 
 
@@ -613,28 +610,28 @@ function draw() {
   if (bounceX > canvasWidth - bounceXSize) {
     bounceSpeedX = -6;
     bounceXSize = random(100)
-    bounceXWeight = random(50)
+    bounceXWeight = random(bounceXMaxWeight)
   }
 
   if (bounceX < bounceXSize) {
     bounceSpeedX = 6;
     color(0, 0, 0, 0)
     bounceXSize = random(100)
-    bounceXWeight = random(50)
+    bounceXWeight = random(bounceXMaxWeight)
   }
 
   if (bounceY > canvasHeight - bounceXSize) {
     bounceSpeedY = -5;
     color(0, 0, 0, 0)
     bounceXSize = random(100)
-    bounceXWeight = random(50)
+    bounceXWeight = random(bounceXMaxWeight)
   }
 
   if (bounceY < bounceXSize) {
     bounceSpeedY = 5;
     color(0, 0, 0, 0)
     bounceXSize = random(100)
-    bounceXWeight = random(50)
+    bounceXWeight = random(bounceXMaxWeight)
   }
 
   // random tool
@@ -659,6 +656,22 @@ function draw() {
 
   drawCounter++
   x_widht = drawCounter * 3
+
+  if (drawing_tool == "triReset") {
+    FixX()
+    noStroke()
+    fill(0)
+    triangle(etT_1_x, etT_1_y, etT_2_x, etT_2_y, etT_3_x, etT_3_y);
+    triangle(etR_1_x, etR_1_y, etR_2_x, etR_2_y, etR_3_x, etR_3_y);
+    triangle(etL_1_x, etL_1_y, etL_2_x, etL_2_y, etL_3_x, etL_3_y);
+    triangle(etB_1_x, etB_1_y, etB_2_x, etB_2_y, etB_3_x, etB_3_y);
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "reset") {
+    background(0);
+    drawCounter = 101
+  }
 
   /*   if (drawing_tool == "blur") {
       blur();
