@@ -14,6 +14,10 @@ var paddingVer = (x_widht / 2) / (Math.sin(Math.atan(tangesBot)))
 
 var animatedObjects = []
 
+alert("Press ok to start app.")
+
+var notification_sreenshotReady = new Audio('audio/notification_sreenshotReady.ogg');
+
 // empty triangles set-up
 // top
 var etT_1_x = paddingHor + canvasWidthMargin
@@ -549,6 +553,12 @@ function blur() {
 
 }
 
+function saveXCanvas() {
+  var newDate = new Date()
+  var saveDate = 'BrumenX' + '-' + newDate.getDate() + '.' + (newDate.getMonth() + 1) + '.' + newDate.getFullYear() + '-' + (newDate.getHours() + 1) + 'h' + newDate.getMinutes() + 'm' + newDate.getSeconds() + 's'
+  saveCanvas(String(saveDate), 'jpg');
+}
+
 function brumenLogo() {
 
   noStroke()
@@ -631,7 +641,10 @@ function setup() {
 
 }
 
-var drawing_tools = ["resetWhite", "triReset", "reset", "save", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+// "save",
+
+var drawing_tools = ["stop", "filter_none", "filter_blur", "filter_brightness", "filter_contrast", "filter_grayscale", "filter_hue-rotate", "filter_invert", "filter_opacity", "filter_saturate", "filter_sepia",
+  "resetWhite", "triReset", "reset", "fixX", "changeX", "changeXDraw", "hgradient", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 var drawing_tool = "xline"
 
 var drawCounter = 0
@@ -714,6 +727,72 @@ function draw() {
   drawCounter++
   x_widht = drawCounter * 3
 
+  if (drawing_tool == "stop") {
+    noLoop()
+    notification_sreenshotReady.play();
+    console.log("Ready to screenshot!")
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_none") {
+    document.getElementById("defaultCanvas0").style.filter = "none"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_blur") {
+    var effectAmount = random(16)
+    document.getElementById("defaultCanvas0").style.filter = "blur(" + String(effectAmount) + "px)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_brightness") {
+    var effectAmount = random(80, 500)
+    document.getElementById("defaultCanvas0").style.filter = "brightness(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_contrast") {
+    var effectAmount = random(10, 500)
+    document.getElementById("defaultCanvas0").style.filter = "contrast(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_grayscale") {
+    var effectAmount = random(80)
+    document.getElementById("defaultCanvas0").style.filter = "grayscale(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_hue-rotate") {
+    var effectAmount = random(360)
+    document.getElementById("defaultCanvas0").style.filter = "hue-rotate(" + String(effectAmount) + "deg)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_invert") {
+    var effectAmount = random(100)
+    document.getElementById("defaultCanvas0").style.filter = "invert(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_opacity") {
+    var effectAmount = random(80, 100)
+    document.getElementById("defaultCanvas0").style.filter = "opacity(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_saturate") {
+    var effectAmount = random(500)
+    document.getElementById("defaultCanvas0").style.filter = "saturate(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
+  if (drawing_tool == "filter_sepia") {
+    var effectAmount = random(100)
+    document.getElementById("defaultCanvas0").style.filter = "sepia(" + String(effectAmount) + "%)"
+    drawCounter = 101
+  }
+
   if (drawing_tool == "triReset") {
     FixX()
     noStroke()
@@ -741,9 +820,7 @@ function draw() {
     } */
 
   if (drawing_tool == "save") {
-    var newDate = new Date()
-    var saveDate = 'BrumenX' + '-' + newDate.getDate() + '.' + (newDate.getMonth() + 1) + '.' + newDate.getFullYear() + '-' + (newDate.getHours() + 1) + 'h' + newDate.getMinutes() + 'm' + newDate.getSeconds() + 's'
-    saveCanvas(String(saveDate), 'jpg');
+    saveXCanvas()
     drawCounter = 101
   }
 
@@ -867,7 +944,8 @@ function draw() {
 }
 
 function keyPressed() {
-  console.log("drawing stopped")
+  //saveXCanvas()
+  console.log("drawing save and stopped")
   noLoop();
 }
 
