@@ -15,76 +15,62 @@
 
 <body style="background-color: white;">
 
-    <div id="main_plate">
+    <div id="main_plate" class="animate_fade_in">
 
         <div id="price_plate">
 
-            <div class="urgent_plate_yellow" style="width: 224px; height: 104px; margin-bottom: 16px;"
-                id="product_name">
-                <h2>300 EC</h2>
+            <div class="urgent_plate_yellow" style="width: 224px; height: 104px; margin-bottom: 16px;">
+                <h2 id="product_price">300 EC</h2>
             </div>
 
-            <div class="urgent_plate_red" style="width: 224px; height: 104px; margin-bottom: 16px;" id="product_name">
+            <div class="urgent_plate_red" style="width: 224px; height: 104px">
                 <div style="text-align: center;">
                     <p>Next price:</p>
-                    <h2>400 EC</h2>
+                    <h2 id="product_price_next">400 EC</h2>
                 </div>
             </div>
 
         </div>
 
+        <div id="product_badges">
+            <div class="product_badge">
+                <p style="font-size: 16px; line-height: 18px; width: 90px">Only 30% oxygen polution</p>
+            </div>
+            <div class="product_badge">
+                <p style="font-size: 24px; line-height: 25px; width: 60px;">AIDS free</p>
+            </div>
+        </div>
+
         <div id="info_hud">
 
-            <div>
+            <div style="display: flex; flex-direction: column; justify-content: flex-end;">
 
                 <div class="side_column">
-
-                    <div class="info_plate" style="margin-bottom: 16px;" id="person_stats">
-                        <p>Life</p>
-                        <div class="person_stats_graph" style="--value: 30%; --graph_color: #FE8091">
-                            <div>
-                                <p style="width: 50px;">30+</p>
-                            </div>
-                        </div>
-
-                        <p>Happiness</p>
-                        <div class="person_stats_graph" style="--value: 70%; --graph_color: #08DFE8">
-                            <div>
-                                <p style="width: 50px;">70+</p>
-                            </div>
-                        </div>
-
-                        <p>Respect</p>
-                        <div class="person_stats_graph" style="--value: 5%; --graph_color: #AF43BC">
-                            <div>
-                                <p style="width: 50px;">5+</p>
-                            </div>
-                        </div>
-
-                        <p>Love</p>
-                        <div class="person_stats_graph" style="--value: 60%; --graph_color: #EB5757">
-                            <div>
-                                <p style="width: 50px;">60+</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div style="margin-bottom: 16px; display: flex;" id="product_badges">
-                        <div class="product_badge">
-                            <p style="font-size: 16px; line-height: 18px; width: 90px">Only 30% oxygen polution</p>
-                        </div>
-                        <div class="product_badge">
-                            <p style="font-size: 24px; line-height: 25px; width: 60px;">AIDS free</p>
-                        </div>
-                    </div>
 
                     <div class="info_plate" style="width: 264px; margin-bottom: 16px;" id="purchase_goal">
                         <p style="margin-bottom: 16px;">Daily purchase goal:</p>
                         <h3 style="margin-bottom: 16px;"><span
                                 style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">0</span>/55
                         </h3>
-                        <h4 style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">Happy streak <br> (302 days) in danger!</h4>
+                        <h4 style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">Happy streak <br> (302 days) in
+                            danger!</h4>
+                    </div>
+        
+                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;">
+                        <p id="product_name">The multifunctional suit</p>
+                    </div>
+
+                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;">
+                        <p id="product_description">A green screen whole body suit that recycles all bodily fluids,
+                            ensures the optimal
+                            temperature
+                            and
+                            stimulates blood circulation in the body.</p>
+                    </div>
+
+                    <div class="info_plate" style="width: 264px;">
+                        <p style="margin-bottom: 16px;">AI genious bot:</p>
+                        <h3 id="ai_testamonial">“Best decision!”</h3>
                     </div>
 
                 </div>
@@ -93,22 +79,41 @@
 
             <div style="display: flex; flex-direction: column; justify-content: flex-end;">
 
-                <div class="side_column" style="justify-content: flex-end">
+                <div class="side_column" style="justify-content: flex-end; margin-bottom: 208px;">
 
-                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;" id="testamonial">
-                        <p style="margin-bottom: 16px;">AI genious bot:</p>
-                        <h3>“Best decision!”</h3>
-                    </div>
+                    <div class="info_plate" style="margin-bottom: 16px;" id="person_stats">
+                        <p id="stat1_lable">Life</p>
+                        <div class="person_stats_graph_plate" style="--graph_color: #FE8091">
+                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 30%;"
+                                id="stat1_graph">
+                                <p style="width: 50px;">30+</p>
+                            </div>
+                        </div>
 
-                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;" id="product_name">
-                        <p>The multifunctional suit</p>
-                    </div>
+                        <p id="stat2_lable">Happiness</p>
+                        <div class="person_stats_graph_plate" style="--graph_color: #08DFE8">
+                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 70%;"
+                                id="stat2_graph">
+                                <p style="width: 50px;">70+</p>
+                            </div>
+                        </div>
 
-                    <div class="info_plate" style="width: 264px;" id="product_description">
-                        <p>A green screen whole body suit that recycles all bodily fluids, ensures the optimal
-                            temperature
-                            and
-                            stimulates blood circulation in the body.</p>
+                        <p id="stat3_lable">Respect</p>
+                        <div class="person_stats_graph_plate" style="--graph_color: #AF43BC">
+                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 5%;"
+                                id="stat3_graph">
+                                <p style="width: 50px;">5+</p>
+                            </div>
+                        </div>
+
+                        <p id="stat4_lable">Love</p>
+                        <div class="person_stats_graph_plate" style="--graph_color: #EB5757">
+                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 60%;"
+                                id="stat4_graph">
+                                <p style="width: 50px;">60+</p>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -119,13 +124,12 @@
 
         <div id="buy_section">
             <div style="margin: 56px;">
-                <button class="urgent_plate_yellow" style="width: 100%; margin-bottom: 16px;--duration: 20;"
-                    id="buy_button">
+                <div id="time_bar" style="width: 100%;--duration: 20; margin-bottom: 16px;">
+                    <div id="time_bar_counter" class="timebar_animation" style="--duration: 20;"></div>
+                </div>
+                <button class="urgent_plate_yellow button_animation" style="--duration: 20;" id="buy_button">
                     <h1>BUY NOW</h1>
                 </button>
-                <div id="time_bar" style="width: 100%;--duration: 20;">
-                    <div></div>
-                </div>
             </div>
         </div>
 
