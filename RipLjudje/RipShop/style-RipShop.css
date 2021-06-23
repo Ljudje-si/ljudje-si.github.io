@@ -51,19 +51,28 @@ p {
     flex-wrap: nowrap;
     padding: 56px;
     height: 802px;
+    margin-top: 272px;
 }
 
 #buy_section {
     position: absolute;
-    bottom: 0px;
+    top: 0px;
     width: 100%;
 }
 
 #price_plate {
     position: absolute;
-    top: 32px;
+    bottom: 32px;
     right: 32px;
     z-index: 2;
+}
+
+#product_badges {
+    display: flex;
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 3;
 }
 
 .side_column {
@@ -116,12 +125,13 @@ p {
 
 #buy_button {
     height: 160px;
-    animation: buttongrow calc(var(--duration) * 1s) linear forwards,
-    flicker_yellow 0.5s infinite alternate,
-    shake 0.5s ease-in infinite;
+    width: 100%;
+    border: 3px solid black;
+    background-color: rgba(8, 232, 17, 65);
 }
 
 #time_bar {
+    width: 100%;
     background-color: rgba(255, 255, 255, 80);
     border: 3px solid black;
     box-sizing: border-box;
@@ -132,24 +142,22 @@ p {
     border-radius: 8px;
 }
 
-#time_bar div {
+#time_bar_counter {
     height: 64px;
     transform-origin: left center;
     background-color: #EB5757;
     border-radius: 7px;
-    /**/
-    animation: roundtime calc(var(--duration) * 1s) linear forwards, flicker_red 0.5s 0.5s infinite alternate;
 }
 
-.person_stats_graph {
+.person_stats_graph_plate {
     width: 192px;
     border: 2px solid #3D3D3D;
     border-radius: 4px;
-    margin-top: 8px;
+    margin: 8px 0px;
     padding: none;
 }
 
-.person_stats_graph div {
+.person_stats_graph {
     width: calc(var(--value));
     border-radius: 4px;
     background-color: var(--graph_color);
@@ -157,15 +165,14 @@ p {
     -webkit-box-shadow: 0 0 8px var(--graph_color);
     box-shadow: 0 0 8px var(--graph_color);
     padding: 8px 0px 8px 10px;
-    animation: graph_grow 0.5s ease-in-out;
 }
 
 .product_badge {
     width: 136px;
     height: 136px;
-    border: 2px solid #00BA07;
+    background-color: #FFF73E;
+    border: 3px solid black;
     border-radius: 136px;
-    background-color: rgba(8, 232, 17, 65);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,26 +183,8 @@ p {
     -webkit-box-shadow: inset 0 0 4px rgba(61, 61, 61, 10);
     box-shadow: inset 0 0 4px rgba(61, 61, 61, 10);
     /**/
-    animation: flicker_green 0.5s 0.5s infinite alternate;
+    animation: flicker_yellow 0.5s 0.5s infinite alternate;
 
-}
-
-@keyframes roundtime {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 0%;
-    }
-}
-
-@keyframes buttongrow {
-    from {
-        height: 160px;
-    }
-    to {
-        height: 1002px;
-    }
 }
 
 @keyframes flicker_yellow {
@@ -226,9 +215,9 @@ p {
 
 @keyframes flicker_green {
     100% {
-        box-shadow: 0 0 40px rgba(8, 232, 17, 100);
-        -moz-box-shadow: 0 0 40px rgba(8, 232, 17, 100);
-        -webkit-box-shadow: 0 0 40px rgba(8, 232, 17, 100);
+        box-shadow: 0 0 40px 16px rgba(8, 232, 17, 100);
+        -moz-box-shadow: 0 0 40px 16px rgba(8, 232, 17, 100);
+        -webkit-box-shadow: 0 0 40px 16px rgba(8, 232, 17, 100);
     }
     0% {
         box-shadow: none;
@@ -273,7 +262,49 @@ p {
     }
 }
 
+.person_stats_graph_animation {
+    animation: graph_grow 0.5s ease-in-out;
+}
+
 @keyframes graph_grow {
     from {width: 0%;}
     to {width: var(--value)}
+}
+
+.animate_fade_in {
+    animation: fade_in 0.7s ease-in;
+}
+
+@keyframes fade_in {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+.button_animation {
+    animation: buttongrow calc(var(--duration) * 1s) linear forwards,
+    flicker_green 0.5s infinite alternate,
+    shake 0.5s ease-in infinite;
+}
+
+@keyframes buttongrow {
+    from {
+        height: 160px;
+    }
+    to {
+        height: 1002px;
+    }
+}
+
+.timebar_animation {
+    animation: timebargrow calc(var(--duration) * 1s) linear forwards,
+    flicker_red 0.5s 0.5s infinite alternate;
+}
+
+@keyframes timebargrow {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
 }
