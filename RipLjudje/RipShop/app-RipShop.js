@@ -1,6 +1,7 @@
 console.log("app connected")
 
-var product_index = 0
+var popup_mode = false
+var rip_PIPEsystem = new Audio('rip_PIPEsystem.ogg');
 
 // Products
 const multifun_suit = { name: "The multifunctional suit", desc: "A green screen whole body suit that recycles all bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.", image: "url('https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg')", price: 300, badges: [{ text: "Only 30% oxygen polution", font_size: "16px", line_height: "18px", width: "90px" }, { text: "AIDS free", font_size: "24px", line_height: "25px", width: "60px" }] }
@@ -23,93 +24,140 @@ function setProductBadges(current_product) {
     document.getElementById("product_badges").innerHTML = String(product_badges)
 }
 
+var product_index = 0
+var current_product = all_products[product_index];
 
 function changeProduct() {
 
-    var current_product = all_products[product_index];
-    product_index++
-    if (product_index > all_products.length) { product_index = 0 }
+    if (popup_mode == false) {
 
-    var current_product = all_products[Math.floor(Math.random() * all_products.length)];
+        if (product_index > all_products.length + 1) { product_index = 0 }
 
-    //Set fade in animation
-    document.getElementById("main_plate").classList.remove("animate_fade_in");
-    void document.getElementById("main_plate").offsetWidth;
-    document.getElementById("main_plate").classList.add("animate_fade_in");
+        //Set fade in animation
+        document.getElementById("main_plate").classList.remove("animate_fade_in");
+        void document.getElementById("main_plate").offsetWidth;
+        document.getElementById("main_plate").classList.add("animate_fade_in");
 
-    //Set product info
-    document.getElementById("product_name").innerHTML = current_product.name
-    document.getElementById("product_description").innerHTML = current_product.desc
-    document.getElementById("main_plate").style.backgroundImage = current_product.image
-    document.getElementById("product_price").innerHTML = String(current_product.price + " EC")
-    document.getElementById("product_price_next").innerHTML = String((current_product.price + (Math.floor(Math.random() * 11) * 100)) + " EC")
+        //Set product info
+        document.getElementById("product_name").innerHTML = current_product.name
+        document.getElementById("product_description").innerHTML = current_product.desc
+        document.getElementById("main_plate").style.backgroundImage = current_product.image
+        document.getElementById("product_price").innerHTML = String(current_product.price + "EC")
+        document.getElementById("product_price_next").innerHTML = String((current_product.price + (Math.floor(Math.random() * 11) * 100)) + " EC")
 
-    //Set AI bot testamonial
-    document.getElementById("ai_testamonial").innerHTML = aiBot_testamonials[Math.floor(Math.random() * aiBot_testamonials.length)]
+        //Set AI bot testamonial
+        document.getElementById("ai_testamonial").innerHTML = aiBot_testamonials[Math.floor(Math.random() * aiBot_testamonials.length)]
 
-    //Set person stats
-    var person_stats_lables_now = ["Life", "Happiness", "Respect", "Love", "Romance", "Wit", "Intelligence"]
-    console.log(person_stats_lables)
+        //Set person stats
+        var person_stats_lables_now = ["Life", "Happiness", "Respect", "Love", "Romance", "Wit", "Intelligence"]
+        console.log(person_stats_lables)
 
-    document.getElementById("stat1_graph").classList.remove("person_stats_graph_animation");
-    void document.getElementById("stat1_graph").offsetWidth;
-    var stat_value = Math.floor(Math.random() * 99)
-    document.getElementById("stat1_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length), 1)[0]
-    document.getElementById("stat1_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
-    document.getElementById("stat1_graph").children[0].innerHTML = String(stat_value + "+")
-    document.getElementById("stat1_graph").classList.add("person_stats_graph_animation");
+        document.getElementById("stat1_graph").classList.remove("person_stats_graph_animation");
+        void document.getElementById("stat1_graph").offsetWidth;
+        var stat_value = Math.floor(Math.random() * 99)
+        document.getElementById("stat1_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length), 1)[0]
+        document.getElementById("stat1_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
+        document.getElementById("stat1_graph").children[0].innerHTML = String(stat_value + "+")
+        document.getElementById("stat1_graph").classList.add("person_stats_graph_animation");
 
-    document.getElementById("stat2_graph").classList.remove("person_stats_graph_animation");
-    void document.getElementById("stat2_graph").offsetWidth;
-    stat_value = Math.floor(Math.random() * 99)
-    document.getElementById("stat2_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length), 1)[0]
-    document.getElementById("stat2_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
-    document.getElementById("stat2_graph").children[0].innerHTML = String(stat_value + "+")
-    document.getElementById("stat2_graph").classList.add("person_stats_graph_animation");
+        document.getElementById("stat2_graph").classList.remove("person_stats_graph_animation");
+        void document.getElementById("stat2_graph").offsetWidth;
+        stat_value = Math.floor(Math.random() * 99)
+        document.getElementById("stat2_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length), 1)[0]
+        document.getElementById("stat2_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
+        document.getElementById("stat2_graph").children[0].innerHTML = String(stat_value + "+")
+        document.getElementById("stat2_graph").classList.add("person_stats_graph_animation");
 
-    document.getElementById("stat3_graph").classList.remove("person_stats_graph_animation");
-    void document.getElementById("stat3_graph").offsetWidth;
-    stat_value = Math.floor(Math.random() * 99)
-    document.getElementById("stat3_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length), 1)[0]
-    document.getElementById("stat3_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
-    document.getElementById("stat3_graph").children[0].innerHTML = String(stat_value + "+")
-    document.getElementById("stat3_graph").classList.add("person_stats_graph_animation");
+        document.getElementById("stat3_graph").classList.remove("person_stats_graph_animation");
+        void document.getElementById("stat3_graph").offsetWidth;
+        stat_value = Math.floor(Math.random() * 99)
+        document.getElementById("stat3_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length), 1)[0]
+        document.getElementById("stat3_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
+        document.getElementById("stat3_graph").children[0].innerHTML = String(stat_value + "+")
+        document.getElementById("stat3_graph").classList.add("person_stats_graph_animation");
 
-    document.getElementById("stat4_graph").classList.remove("person_stats_graph_animation");
-    void document.getElementById("stat4_graph").offsetWidth;
-    stat_value = Math.floor(Math.random() * 99)
-    document.getElementById("stat4_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length, 1))[0]
-    document.getElementById("stat4_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
-    document.getElementById("stat4_graph").children[0].innerHTML = String(stat_value + "+")
-    document.getElementById("stat4_graph").classList.add("person_stats_graph_animation");
+        document.getElementById("stat4_graph").classList.remove("person_stats_graph_animation");
+        void document.getElementById("stat4_graph").offsetWidth;
+        stat_value = Math.floor(Math.random() * 99)
+        document.getElementById("stat4_lable").innerHTML = person_stats_lables_now.splice(Math.floor(Math.random() * person_stats_lables_now.length, 1))[0]
+        document.getElementById("stat4_graph").style.setProperty('--value', String(stat_value - 8 + "%"))
+        document.getElementById("stat4_graph").children[0].innerHTML = String(stat_value + "+")
+        document.getElementById("stat4_graph").classList.add("person_stats_graph_animation");
 
-    //Set product badges
-    document.getElementById("product_badges").innerHTML = ''
+        //Set product badges
+        document.getElementById("product_badges").innerHTML = ''
 
-    //Set animation times
-    var product_time = Math.floor(Math.random() * 29) + 30
+        //Set animation times
+        var product_time = Math.floor(Math.random() * 29) + 30
 
-    document.getElementById("buy_button").classList.remove("button_animation");
-    document.getElementById("buy_button").style.setProperty('--duration', product_time);
-    void document.getElementById("buy_button").offsetHeight;
-    document.getElementById("buy_button").style.height = "160px"
-    document.getElementById("buy_button").classList.add("button_animation");
+        document.getElementById("buy_button").classList.remove("button_animation");
+        document.getElementById("buy_button").style.setProperty('--duration', product_time);
+        void document.getElementById("buy_button").offsetHeight;
+        document.getElementById("buy_button").style.height = "160px"
+        document.getElementById("buy_button").classList.add("button_animation");
 
-    document.getElementById("time_bar_counter").classList.remove("timebar_animation");
-    document.getElementById("time_bar_counter").style.setProperty('--duration', product_time);
-    void document.getElementById("time_bar_counter").offsetWidth;
-    document.getElementById("time_bar_counter").style.width = "100%"
-    document.getElementById("time_bar_counter").classList.add("timebar_animation");
+        document.getElementById("time_bar_counter").classList.remove("timebar_animation");
+        document.getElementById("time_bar_counter").style.setProperty('--duration', product_time);
+        void document.getElementById("time_bar_counter").offsetWidth;
+        document.getElementById("time_bar_counter").style.width = "100%"
+        document.getElementById("time_bar_counter").classList.add("timebar_animation");
 
-    //Ser repeat transition
-    setTimeout(setProductBadges, (((product_time * 1000) + 500)/2), current_product);
-    console.log(((product_time * 1000) + 500)/2)
-    setTimeout(changeProduct, (product_time * 1000) + 500);
+        //Ser repeat transition
+        setTimeout(setProductBadges, (((product_time * 1000) + 500) / 2), current_product);
+        console.log(((product_time * 1000) + 500) / 2)
+        setTimeout(changeProduct, (product_time * 1000) + 500);
+
+        product_index++
+
+    }
+
+}
+
+var delivery_bar_msgs_index = 0
+var delivery_bar_msgs = ["Finding citizen location", "Tracking Neurolink GPS coordinates", "Location found: Vetrinjska ulica 30 - living room", "Assembling item components", "Inserting shippment in RiverTM P.I.P.E. system", "Travelling in RiverTM P.I.P.E. system", "RiverTM cares about your exsistence", "Return the care. Buy more from RiverTM", "Shipmnet stuck!"]
+
+function delivery_bar_msg() {
+
+    if (delivery_bar_msgs_index < delivery_bar_msgs.length) {
+        document.getElementById("delivery_bar_msg").innerHTML = delivery_bar_msgs[delivery_bar_msgs_index]
+        delivery_bar_msgs_index++
+        setTimeout(delivery_bar_msg, 4000)
+    }
+}
+
+function product_popup() {
+
+    rip_PIPEsystem.play();
+    popup_mode = true
+
+    document.getElementById("popup_buy").style.display = "block"
+
+    document.getElementById("citizen_id").innerHTML = '#' + Math.floor(Math.random() * 1E16)
+    document.getElementById("product_delivered_img").src = current_product.image
+    document.getElementById("product_delivered_name").innerHTML = current_product.name
+    document.getElementById("product_delivered_desc").innerHTML = current_product.desc
+    document.getElementById("product_delivered_price").innerHTML = current_product.price + "EC"
+    var product_delivered_discount = Math.floor(Math.random() * 10)
+    document.getElementById("product_delivered_discount").innerHTML = product_delivered_discount + "EC"
+    document.getElementById("product_delivered_priceFinal").innerHTML = (current_product.price - product_delivered_discount) + "EC"
+    document.getElementById("product_delivered_AccountBalance").innerHTML = "-" + (Math.floor(Math.random() * 10000) + 10000) + "." + Math.floor((Math.random() * 10000) + 10000)
+    document.getElementById("product_delivered_SexflixHours").innerHTML = Math.floor((Math.random() * 10000) + 10000) + " hours"
+    
+    delivery_bar_msg()
+    setTimeout(function(){
+        document.getElementById("delivery_status").classList.remove("urgent_plate_yellow")
+        document.getElementById("delivery_status").classList.add("urgent_plate_red")
+        document.getElementById("delivery_status").children[0].innerHTML = "ERROR"
+    }, 32000)
+
+    setTimeout(function(){
+        location.reload()
+    }, 47000)
 
 }
 
 changeProduct()
 
-document.getElementById("buy_button").addEventListener('click', function(){
-
+document.getElementById("buy_button").addEventListener('click', function () {
+    product_popup()
 })
