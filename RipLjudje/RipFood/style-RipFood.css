@@ -122,7 +122,6 @@ p {
     width: 100%;
     overflow-y: scroll;
     border-left: 2px solid black;
-    display: none;
 }
 
 #product_filter {
@@ -172,7 +171,8 @@ p {
 }
 
 .product_listing_button {
-    display: flex;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -227,7 +227,7 @@ p {
     margin-right: 8px;
 }
 
-#product_section,  #profile_section,  .recommandations_container {
+#product_section, #profile_section, .recommandations_container {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -236,20 +236,32 @@ p {
     display: none;
 }
 
-#product_section, #product_header, #profile_section{
-    display: none;
-}
-
 #product_selected_section {
     width: 100%;
     border-left: 2px solid black;
 }
 
-#taste_graph {
+#taste_graph_container {
     border-right: 2px solid black;
     height: 313px;
     width: 80%;
     padding: 24px;
+}
+
+#taste_graph_svg {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-5px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
 }
 
 .taste_slider_plate {
@@ -260,4 +272,67 @@ p {
 .taste_slider_plate input {
     width: 100%;
     margin-top: 16px;
+}
+
+#product_cooking_section {
+    width: 100%;
+    border-left: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scrolling_bar {
+    width: 70%;
+    overflow: hidden;
+    border: 2px solid black;
+    padding: 16px 0 10px;
+    margin-top: 8px;
+}
+
+.scrolling_bar_content {
+    width: 100%;
+    white-space: nowrap;
+    display: block;
+    transform: translateX(140%);
+    animation: horizontal_move 10s linear infinite
+}
+
+@keyframes horizontal_move {
+    to {
+        transform: translateX(-140%);
+    }
+}
+
+.scrolling_bar_content_opp {
+    width: 100%;
+    white-space: nowrap;
+    display: block;
+    transform: translateX(-140%);
+    animation: horizontal_move_opp 10s linear infinite
+}
+
+@keyframes horizontal_move_opp {
+    to {
+        transform: translateX(140%);
+    }
+}
+
+.flash_element {
+    animation: flash_element 0.7s linear infinite;
+}
+
+@keyframes flash_element {
+    from {
+        opacity: 1.0;
+    }
+
+    to {
+        opacity: 0.0;
+    }
+}
+
+#product_cooking_section, #product_selected_section, #profile_section {
+    display: none;
 }
