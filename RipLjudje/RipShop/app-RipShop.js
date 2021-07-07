@@ -31,7 +31,8 @@ function changeProduct() {
 
     if (popup_mode == false) {
 
-        if (product_index > all_products.length + 1) { product_index = 0 }
+        if (product_index > all_products.length - 1) { product_index = 0 }
+        current_product = all_products[product_index]
 
         //Set fade in animation
         document.getElementById("main_plate").classList.remove("animate_fade_in");
@@ -50,7 +51,6 @@ function changeProduct() {
 
         //Set person stats
         var person_stats_lables_now = ["Life", "Happiness", "Respect", "Love", "Romance", "Wit", "Intelligence"]
-        console.log(person_stats_lables)
 
         document.getElementById("stat1_graph").classList.remove("person_stats_graph_animation");
         void document.getElementById("stat1_graph").offsetWidth;
@@ -104,10 +104,10 @@ function changeProduct() {
 
         //Ser repeat transition
         setTimeout(setProductBadges, (((product_time * 1000) + 500) / 2), current_product);
-        console.log(((product_time * 1000) + 500) / 2)
         setTimeout(changeProduct, (product_time * 1000) + 500);
 
         product_index++
+        console.log(product_index)
 
     }
 

@@ -37,8 +37,9 @@ p {
     margin: 56px;
     position: relative;
     background-image: url("https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg");
-    background-position: center;
-    background-size: cover;
+    background-position: 50% 95%;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
 }
 
 #info_hud {
