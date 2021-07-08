@@ -39,7 +39,7 @@ var products = [Wasabi_macaroni, Hot_shower, Mothers_love, Perfect_highfive, Tra
 
 //Profile database
 
-var profile_activity = ["Loved", "Hated", "Is tasting", "Is tasting"]
+var profile_activity = ["Loved", "Hated", "Is tasting", "Is tasting", "Is tasting"]
 var profile_pic_number = 14
 
 var name_part1 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
