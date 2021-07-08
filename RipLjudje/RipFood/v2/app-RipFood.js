@@ -33,7 +33,7 @@ const Grandmas_Kiss = { title: "Grandma's Kiss", desc: "Of course, as a Grandma 
 const Rainy_Sunday = { title: "Rainy Sunday", desc: "If you feel down during a downpour, it's not your imagination: Bad weather can indeed have a negative effect on your emotions. ... This group feels angrier and less happy on days with more precipitation.", background: "gradient (26).gif" }
 const Friend_Of_The_Animals = { title: "Friend Of The Animals", desc: "Ostriches are attracted to humans. They will commonly preform mating dances for humans and prefer to try and impress humans rather than other ostriches. Elephants also show signs of thinking that animals are adorable by petting them with their trunk.", background: "gradient (27).gif" }
 
-var item_categories = ["cat_Daily", "cat_YourList", "cat_YourFriends", "cat_Trending", "cat_LikedMars"]
+var item_categories = ["cat_Daily", "cat_YourList", "cat_YourFriends", "cat_Trending", "cat_LikedThis"]
 
 var products = [Wasabi_macaroni, Hot_shower, Mothers_love, Perfect_highfive, Traffic_jam, Three_Days_Weekend, Clean_House, New_Haircut, Fresh_Sheets, One_Night_Stand, Solved_Math_Problem, Mothers_Love, Baby_Kittens, Forest_Walk, Inside_Jokes, Job_Promotion, Mars_Landing, Free_Samples, First_Kiss, Break_up, Train_Delays, Losing_Your_Job, Snow_Day, Friday_Hungover, Grandmas_Kiss, Rainy_Sunday, Friend_Of_The_Animals]
 
@@ -130,6 +130,7 @@ function updateProfileInfo() {
     document.getElementById("citizen_id_field").innerHTML = Math.floor(Math.random() * 1000)
     document.getElementById("account_balance").innerHTML = (Math.floor(Math.random() * 1000) + 100) + " EC"
     document.getElementById("profile_pic").src = "profile_pics/profile_pic (" + (Math.floor(Math.random() * profile_pic_number) + 1) + ").jpg"
+    document.getElementById("cat_LikedThis_title").innerHTML = products[Math.floor(Math.random() * products.length)].title
     updateStarRating()
 }
 

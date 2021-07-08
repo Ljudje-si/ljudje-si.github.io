@@ -42,7 +42,7 @@ h3 {
 
 h4 {
     font-family: 'Syncopate', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
     line-height: 16px;
     text-transform: uppercase;
@@ -117,15 +117,6 @@ p {
     65% { transform: translate(0, -50px) rotate(15deg); }
     70% { transform: translate(0, -50px) rotate(-15deg); }
     100% { transform: translate(0, 0) scale(1.25, 0.75); }
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
 }
 
 .product_plate {
