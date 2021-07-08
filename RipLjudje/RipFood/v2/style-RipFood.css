@@ -64,9 +64,12 @@ p {
 
 #intro_section {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border: 2px solid black;
+    position: absolute;
+    background-color: white;
 }
 
 #start_button {
@@ -104,9 +107,9 @@ p {
 
 #riverLogo {
     animation: pop 5s infinite;
-    position: fixed;
-    top: 170px;
-    right: 220px;
+    position: absolute;
+    top: 88px;
+    right: 85px;
 }
 
 @keyframes pop {
@@ -362,6 +365,6 @@ p {
     }
 }
 
-#product_cooking_section, #profile_section, #product_selected_section {
+#product_cooking_section, #product_selected_section {
     display: none;
 }

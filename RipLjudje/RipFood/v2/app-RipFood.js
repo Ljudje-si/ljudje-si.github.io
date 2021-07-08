@@ -139,7 +139,7 @@ updateProfileInfo()
 //Navigation
 
 document.getElementById("start_button").addEventListener('click', function () {
-    document.getElementById("profile_section").style.display = "block"
+    // document.getElementById("profile_section").style.display = "block"
     document.getElementById("intro_section").style.display = "none"
 })
 
