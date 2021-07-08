@@ -11,11 +11,11 @@ const Mothers_love = { title: "Mother’s Love", category: "cat_Daily", price: 1
 const Perfect_highfive = { title: "Perfect Highfive", category: "cat_Daily", price: 12, time: 25, desc: "Imagine this. You just scored the winning shot in your basketball game. Your teammates run up to you to congratulate you. They yell “Great shot!” and give you a big round of High Fives. You are thrilled, happy, connected, and, most importantly, appreciated.", background: "Composition 3_1_1.gif" }
 const Traffic_jam = { title: "Traffic Jam", category: "cat_YourFriends", price: 12, time: 25, desc: "Simply, a high five is a gesture that promotes positive “feel-good” feelings ephemerally. We do high fives to make a celebration short.", background: "Composition 3_3.gif" }
 const Three_Days_Weekend = { title: "Three-Days-Weekend", category: "cat_YourFriends", price: 12, time: 25, desc: "“Who says you need to cash in all your vacation days at once? In fact, according to experts, it seems that taking short vacations throughout the year may be more beneficial to your mental well-being than taking one long vacation.” Big society to his employees.", background: "Composition 3_4.gif" }
-const Clean_House  = { title: "Clean House ", category: "cat_YourList", price: 12, time: 25, desc: "A clean home carries a strong aura of perfection, an ambiance of clarity and a sense of wholesomeness. Truth be told, everyone loves to walk into a clean home but not everyone has the will to maintain a clean home. In fact, if you have ever had a clean home, you must have had at least one of these unique feelings.", background: "Composition 4_1_1.gif" }
+const Clean_House = { title: "Clean House ", category: "cat_YourList", price: 12, time: 25, desc: "A clean home carries a strong aura of perfection, an ambiance of clarity and a sense of wholesomeness. Truth be told, everyone loves to walk into a clean home but not everyone has the will to maintain a clean home. In fact, if you have ever had a clean home, you must have had at least one of these unique feelings.", background: "Composition 4_1_1.gif" }
 
 // Categories: cat_Daily, cat_YourList, cat_YourFriends, cat_Trending, cat_LikedMars
 
-var products = [Wasabi_macaroni, Hot_shower, Mothers_love, Perfect_highfive, Traffic_jam, Three_Days_Weekend, Clean_House ]
+var products = [Wasabi_macaroni, Hot_shower, Mothers_love, Perfect_highfive, Traffic_jam, Three_Days_Weekend, Clean_House]
 
 //Populate products
 
@@ -27,7 +27,7 @@ function updateProductSelected(productNow) {
     product_selected = productNow
 
     document.getElementById("profile_section").style.display = "none"
-    document.getElementById("product_selected_section").style.display = "block"
+    document.getElementById("product_selected_section").style.display = "flex"
 
     document.getElementById("product_selected_title").innerHTML = product_selected.title
     document.getElementById("product_selected_desc").innerHTML = product_selected.desc
@@ -35,6 +35,8 @@ function updateProductSelected(productNow) {
 
     var bgImage = "gradients/" + product_selected.background
     document.getElementById("taste_graph_svg").style.backgroundImage = "url('" + bgImage + "')";
+    document.getElementById("cook_now_button").style.backgroundImage = "url('" + bgImage + "')";
+    document.getElementById("product_cooking_section").style.backgroundImage = "url('" + bgImage + "')";
 
     updateTasteGraph()
 
@@ -82,7 +84,17 @@ function updateProfileInfo() {
 
 updateProfileInfo()
 
-//Product section navigation
+//Navigation
+
+document.getElementById("start_button").addEventListener('click', function () {
+    document.getElementById("profile_section").style.display = "block"
+    document.getElementById("intro_section").style.display = "none"
+})
+
+document.getElementById("back_button_button").addEventListener('click', function () {
+    document.getElementById("product_selected_section").style.display = "none"
+    document.getElementById("profile_section").style.display = "block"
+})
 
 document.getElementById("cook_now_button").addEventListener('click', function () {
     document.getElementById("product_cooking_section").style.display = "flex"
@@ -167,6 +179,9 @@ function startTimer(duration, display) {
             countdown_alarm.play()
             clearInterval(interval_countdown)
             display.classList.add("flash_element")
+            document.querySelectorAll("h2.scrolling_bar_content_opp, h2.scrolling_bar_content").forEach(item => {
+                item.innerHTML = "FINISHED . FINISHED . FINISHED"
+            })
             setTimeout(function () {
                 location.reload();
             }, 10000)

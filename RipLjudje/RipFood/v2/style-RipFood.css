@@ -62,6 +62,46 @@ p {
     line-height: 16px;
 }
 
+#intro_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+#intro_section button {
+    background-color: white;
+    margin: 0px;
+    width: 50%;
+    border: none;
+    background-image: url("gradients/Composition\ 3_1_1.gif");
+    background-position: center;
+    background-size: 200%;
+}
+
+.intro_step {
+    display: flex;
+    border-top: 2px solid black;
+    padding: 0px;
+}
+
+.intro_step div {
+    display: flex;
+}
+
+.intro_step_number {
+    justify-content: center;
+    align-items: flex-start;
+    width: 10%;
+    border-right: 2px solid black;
+    padding: 24px;
+}
+
+.intro_step_desc {
+    padding: 24px;
+    width: 90%;
+}
+
 .product_plate {
     width: 140px;
     height: 140px;
@@ -84,7 +124,7 @@ p {
 #profile_section {
     width: 100%;
     overflow-y: scroll;
-    border-left: 2px solid black;
+    border: 2px solid black;
 }
 
 .recommandations_container {
@@ -138,8 +178,10 @@ p {
 }
 
 #product_selected_section {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    border-left: 2px solid black;
+    border: 2px solid black;
 }
 
 .product_listing {
@@ -151,28 +193,31 @@ p {
 .product_listing_desc {
     border-right: 2px solid black;
     padding: 24px;
-    width: 80%;
-}
-
-.product_listing_functions_container {
-    width: 20%;
-    text-align: center;
+    width: 60%;
 }
 
 .product_listing_functions {
-    padding: 16px;
+    width: 40%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product_listing_functions div {
+    display: flex;
+}
+
+#back_button_button {
+    border: 2px solid black;
+    padding: 16px;
+    border-radius: 48px;
 }
 
 #taste_graph_container {
     border-right: 2px solid black;
-    height: 313px;
-    width: 80%;
+    width: 60%;
     padding: 24px;
 }
-
 
 #taste_graph_svg {
     background-position: center;
@@ -192,12 +237,11 @@ p {
 }
 
 .taste_slider_plate {
-    width: 50%;
     padding: 32px;
+    border-top: 2px solid black;
 }
 
 .taste_slider_plate label {
-    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -207,13 +251,25 @@ p {
     margin-top: 16px;
 }
 
+#cook_now_button {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("gradients/Composition\ 3_1_1.gif");
+    background-position: center;
+    background-size: 200%;
+}
+
 #product_cooking_section {
     width: 100%;
-    border-left: 2px solid black;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-position: center;
+    background-size: 200% 200%;
 }
 
 .scrolling_bar {
@@ -265,6 +321,6 @@ p {
     }
 }
 
-#product_cooking_section, #product_selected_section {
+#product_cooking_section, #profile_section, #product_selected_section {
     display: none;
 }
