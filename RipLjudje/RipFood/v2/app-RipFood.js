@@ -7,7 +7,6 @@ var countdown_alarm = new Audio('countdown_alarm.ogg')
 
 const Wasabi_macaroni = { title: "Wasabi Macaroni", desc: "Real fresh-grated wasabi tastes bright and green with a touch of quickly fading heat. It is pungent, yet delicate enough to let the flavor of raw fish shine.", background: "gradient (1).gif" }
 const Hot_shower = { title: "Hot Shower", desc: "The heat warms up your muscles and makes you more pliable. Your muscles are relaxed, and you're not as tense. Hot showers can relieve tension and soothe stiff muscles.", background: "gradient (2).gif" }
-const Mothers_love = { title: "Mother’s Love", desc: "Mother love is… the deep, all-embracing, all-accepting, nourishing, nurturing, warm, safe, supportive love that soothes the places inside our hearts that feel scared and lonely.", background: "gradient (3).gif" }
 const Perfect_highfive = { title: "Perfect Highfive", desc: "Imagine this. You just scored the winning shot in your basketball game. Your teammates run up to you to congratulate you. They yell “Great shot!” and give you a big round of High Fives. You are thrilled, happy, connected, and, most importantly, appreciated.", background: "gradient (4).gif" }
 const Traffic_jam = { title: "Traffic Jam", desc: "Simply, a high five is a gesture that promotes positive “feel-good” feelings ephemerally. We do high fives to make a celebration short.", background: "gradient (5).gif" }
 const Three_Days_Weekend = { title: "Three-Days-Weekend", desc: "“Who says you need to cash in all your vacation days at once? In fact, according to experts, it seems that taking short vacations throughout the year may be more beneficial to your mental well-being than taking one long vacation.” Big society to his employees.", background: "gradient (6).gif" }
@@ -35,12 +34,12 @@ const Friend_Of_The_Animals = { title: "Friend Of The Animals", desc: "Ostriches
 
 var item_categories = ["cat_Daily", "cat_YourList", "cat_YourFriends", "cat_Trending", "cat_LikedThis"]
 
-var products = [Wasabi_macaroni, Hot_shower, Mothers_love, Perfect_highfive, Traffic_jam, Three_Days_Weekend, Clean_House, New_Haircut, Fresh_Sheets, One_Night_Stand, Solved_Math_Problem, Mothers_Love, Baby_Kittens, Forest_Walk, Inside_Jokes, Job_Promotion, Mars_Landing, Free_Samples, First_Kiss, Break_up, Train_Delays, Losing_Your_Job, Snow_Day, Friday_Hungover, Grandmas_Kiss, Rainy_Sunday, Friend_Of_The_Animals]
+var products = [Wasabi_macaroni, Hot_shower, Perfect_highfive, Traffic_jam, Three_Days_Weekend, Clean_House, New_Haircut, Fresh_Sheets, One_Night_Stand, Solved_Math_Problem, Mothers_Love, Baby_Kittens, Forest_Walk, Inside_Jokes, Job_Promotion, Mars_Landing, Free_Samples, First_Kiss, Break_up, Train_Delays, Losing_Your_Job, Snow_Day, Friday_Hungover, Grandmas_Kiss, Rainy_Sunday, Friend_Of_The_Animals]
 
 //Profile database
 
 var profile_activity = ["Loved", "Hated", "Is tasting", "Is tasting", "Is tasting"]
-var profile_pic_number = 14
+var profile_pic_number = 34
 
 var name_part1 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var name_part2 = ["Б", "Г", "Ґ", "Д", "Ђ", "Ё", "Є", "Ж", "З", "И", "Ї", "Й", "Л", "Љ", "Њ", "П", "Ћ", "У", "Ў", "Ф", "Х", "Ц", "Ч", "Џ", "Ш", "Щ", "Ъ", "Ы", "Ь", "Э", "Ю", "Я", "б", "в", "г", "ґ", "д", "ђ", "ё", "є", "ж", "з", "и", "ї", "й", "к", "л", "љ", "м", "н", "њ", "п", "т", "ћ", "ў", "ф", "ц", "ч", "џ", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я", "Γ", "Δ", "Θ", "Λ", "Ξ", "Ο", "Π", "Σ", "Φ", "Ψ", "Ω", "α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ", "λ", "μ", "ν", "ξ", "ο", "π", "ρ", "σ", "τ", "υ", "φ", "χ", "ψ", "ω", "ά", "Ά", "έ", "Έ", "έ", "Ή", "ί", "ϊ", "ΐ", "Ί", "ό", "Ό", "ύ", "ΰ", "ϋ", "Ύ", "Ϋ", "Ώ", "Ă", "Â", "Ê", "Ô", "Ơ", "Ư", "ă", "â", "ê", "ô", "ơ", "ư"]
