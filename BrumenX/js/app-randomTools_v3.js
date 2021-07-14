@@ -441,9 +441,9 @@ function setup() {
 }
 
 var drawing_tools = ["resetWhite", "reset",
-  "triReset", "fixX", "changeX", "changeXDraw", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
-  "triReset", "fixX", "changeX", "changeXDraw", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
-  "triReset", "fixX", "changeX", "changeXDraw", "growPixel", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
+  "triReset", "fixX", "changeX", "changeXDraw", "x_curved", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+  "triReset", "fixX", "changeX", "changeXDraw", "x_curved", "growPixel", "scatter", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle",
+  "triReset", "fixX", "changeX", "changeXDraw", "x_curved", "growPixel", "xline", "vhlines", "line", "line_curved", "circle", "square", "square_round", "rectangle", "rectangle_round", "triangle"]
 var drawing_tool = "xline"
 
 var drawCounter = 0
@@ -479,6 +479,14 @@ function draw() {
 
   drawCounter++
   x_widht = drawCounter * 3
+
+  if (drawing_tool == "x_curved") {
+    strokeWeight(random(10))
+    noFill()
+    stroke(random(255), random(255), random(255))
+    bezier(0, 0, random(width / 4), random(height / 4), random(width / 4 * 3, width), random(height / 4 * 3, height), width, height);
+    bezier(width, 0, random(width / 4 * 3, width), random(height / 4), random(width / 4), random(height / 4 * 3, height), 0, height);
+  }
 
   if (drawing_tool == "triReset") {
     FixX()
