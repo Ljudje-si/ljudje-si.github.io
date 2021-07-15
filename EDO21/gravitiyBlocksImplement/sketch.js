@@ -23,7 +23,8 @@ var canvas_width
 var canvas_height
 
 function preload() {
-  blockImg = loadImage('block.png')
+  blockImg = loadImage('https://cdn.jsdelivr.net/gh/Ljudje-si/ljudje-si.github.io/EDO21/gravitiyBlocksImplement/block.png')
+  //blockImg = loadImage('block.png')
 }
 
 function setup() {
