@@ -484,8 +484,12 @@ function draw() {
     strokeWeight(random(10))
     noFill()
     stroke(random(255), random(255), random(255))
-    bezier(0, 0, random(width / 4), random(height / 4), random(width / 4 * 3, width), random(height / 4 * 3, height), width, height);
-    bezier(width, 0, random(width / 4 * 3, width), random(height / 4), random(width / 4), random(height / 4 * 3, height), 0, height);
+    if (random(0, 2) > 1) {
+      bezier(0, 0, random(width / 4), random(height / 4), random(width / 4 * 3, width), random(height / 4 * 3, height), width, height);
+    }
+    else {
+      bezier(width, 0, random(width / 4 * 3, width), random(height / 4), random(width / 4), random(height / 4 * 3, height), 0, height);
+    }
   }
 
   if (drawing_tool == "triReset") {
