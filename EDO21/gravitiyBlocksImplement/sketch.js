@@ -35,6 +35,10 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    pixelDensity(1)
+  }
+
   var canvasMouse = Mouse.create(canvas.elt)
   canvasMouse.pixelRatio = pixelDensity();
   mConstraint = MouseConstraint.create(engine, { mouse: canvasMouse })
@@ -65,7 +69,7 @@ function Box(x, y, w, h) {
   Matter.Body.rotate(this.body, random(360))
   World.add(world, this.body);
 
-  this.show = function() {
+  this.show = function () {
     var pos = this.body.position;
     var angle = this.body.angle;
     push();
