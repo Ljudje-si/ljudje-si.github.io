@@ -23,8 +23,32 @@ var canvas_width
 var canvas_height
 
 function preload() {
-  blockImg = loadImage('https://cdn.jsdelivr.net/gh/Ljudje-si/ljudje-si.github.io/EDO21/gravitiyBlocksImplement/block.png')
-  //blockImg = loadImage('block.png')
+  blockImg = loadImage('https://rawcdn.githack.com/Ljudje-si/ljudje-si.github.io/e2d0759faefc2929c9341fc5b298ad658514d7d1/EDO21/gravitiyBlocksImplement/block.png')
+  // blockImg = loadImage('block.png')
+}
+
+function Box(x, y, w, h) {
+  var options = {
+    friction: 5,
+    density: 5,
+    restitution: 0.1
+  };
+  this.body = Bodies.rectangle(x, y, w, h, options);
+  this.w = w;
+  this.h = h;
+  Matter.Body.rotate(this.body, random(360))
+  World.add(world, this.body);
+
+  this.show = function () {
+    var pos = this.body.position;
+    var angle = this.body.angle;
+    push();
+    translate(pos.x, pos.y);
+    rotate(angle);
+    imageMode(CENTER)
+    image(blockImg, 0, 0, this.w, this.h);
+    pop();
+  };
 }
 
 function setup() {
@@ -56,30 +80,10 @@ function setup() {
   World.add(world, wallR);
   World.add(world, wallL);
 
-}
+  for (let i = 0; i < 5; i++) {
+    boxes.push(new Box(random(0 + (100 * (height / 800) / 2), width - (100 * (height / 800) / 2)), height -(100 * (height / 800)), 100 * (height / 800), 200 * (height / 800)))
+  }
 
-function Box(x, y, w, h) {
-  var options = {
-    friction: 5,
-    density: 5,
-    restitution: 0.1
-  };
-  this.body = Bodies.rectangle(x, y, w, h, options);
-  this.w = w;
-  this.h = h;
-  Matter.Body.rotate(this.body, random(360))
-  World.add(world, this.body);
-
-  this.show = function () {
-    var pos = this.body.position;
-    var angle = this.body.angle;
-    push();
-    translate(pos.x, pos.y);
-    rotate(angle);
-    imageMode(CENTER)
-    image(blockImg, 0, 0, this.w, this.h);
-    pop();
-  };
 }
 
 
