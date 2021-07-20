@@ -56,7 +56,7 @@ function setup() {
   var canvasDiv = document.getElementById('canvas_div');
   var canvas = createCanvas(canvasDiv.offsetWidth, canvasDiv.offsetHeight);
   canvas.parent("canvas_div");
-  background("#FFDB38");
+  background("#E9AE21");
   engine = Engine.create();
   world = engine.world;
 
@@ -88,7 +88,7 @@ function setup() {
 
 
 function draw() {
-  background("#FFDB38");
+  background("#E9AE21");
   Engine.update(engine);
   for (var i = 0; i < boxes.length; i++) {
     boxes[i].show();
