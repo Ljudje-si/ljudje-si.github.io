@@ -16,248 +16,246 @@
 </head>
 
 <body>
-    <div id="main_plate">
-        <div id="intro_section">
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 56px;">
-                <h1 style="font-size: 80px;">R-eat</h1>
-                <img id="riverLogo" src="rivertm-logo.png" height="72px">
+    <div id="intro_section">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 56px;">
+            <h1 style="font-size: 80px;">R-eat</h1>
+            <img id="riverLogo" src="rivertm-logo.png" height="72px">
+        </div>
+        <div style="border-top: 2px solid black; padding: 56px; height: 100%;">
+            <h2 style="width: 70%;">PREPARE nutritious mealS for your body & SOUL in 4 simple steps
+            </h2>
+        </div>
+        <div style="display: flex">
+            <div style="width: 50%; border-right: 2px solid black; border-top: 2px solid black;">
+                <div class="intro_step" style="border-top: none;">
+                    <div class="intro_step_number">
+                        <h2>1</h2>
+                    </div>
+                    <div class="intro_step_desc">
+                        <p>Put a piece of substrate you want to ingest in the R-Eat.</p>
+                    </div>
+                </div>
+                <div class="intro_step">
+                    <div class="intro_step_number">
+                        <h2>2</h2>
+                    </div>
+                    <div class="intro_step_desc">
+                        <p>Choose between an incredible array of feelings and emotions you want to experience during
+                            your breakfast, lunch, or dinner.</p>
+                    </div>
+                </div>
+                <div class="intro_step">
+                    <div class="intro_step_number">
+                        <h2>3</h2>
+                    </div>
+                    <div class="intro_step_desc">
+                        <p>Are you feeling fancy today? Treat yourself with an additional pinch of joy for lunch,
+                            and positive vibes are guaranteed for the rest of the day! Are you short on emoticoins?
+                            No worries, move that joy slider down a bit, and don’t forget - tomorrow is a new day to
+                            earn some happiness again!</p>
+                    </div>
+                </div>
+                <div class="intro_step">
+                    <div class="intro_step_number">
+                        <h2>4</h2>
+                    </div>
+                    <div class="intro_step_desc">
+                        <p>When your recipe is spot-on, hit the COOK NOW button and enjoy (or hate) your meal!</p>
+                    </div>
+                </div>
             </div>
-            <div style="border-top: 2px solid black; padding: 56px; height: 100%;">
-                <h2 style="width: 70%;">PREPARE nutritious mealS for your body & SOUL in 4 simple steps
+            <button id="start_button">
+                <h1>I'm hungry</h1>
+                <img src="arrow.svg" width="56px" style="margin-left: 8px; margin-bottom: 10px;">
+            </button>
+        </div>
+    </div>
+    <div id="product_selected_section">
+        <div class="product_listing">
+            <div class="product_listing_desc">
+                <h1 id="product_selected_title">WASABI MACARONI</h1>
+                <p id="product_selected_desc" style="width: 80%;">Real fresh-grated wasabi tastes bright and green
+                    with a touch of
+                    quickly
+                    fading heat. It is
+                    pungent, yet delicate enough to let the flavor of raw fish shine.</p>
+            </div>
+
+            <div class="product_listing_functions">
+                <div>
+                    <h1 id="product_selected_price">15</h1>
+                    <h3>EC</h3>
+                </div>
+                <div style="margin-bottom: 4px;">
+                    <img src="heart.svg" width="24px" style="margin-right: 4px;">
+                    <img src="share.svg" width="24px">
+                </div>
+                <div id="back_button_button">
+                    <img src="arrow.svg" width="32px" style="transform: rotate(180deg);">
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; height: 100%;">
+            <div id="taste_graph_container" style="display: flex; justify-content: center; align-items: center;">
+                <svg id="taste_graph_svg" height="300px" width="300px">
+                    <line x1="150" y1="0" x2="150" y2="300" style="stroke:rgb(0,0,0);stroke-width:2" />
+                    <line x1="0" y1="150" x2="300" y2="150" style="stroke:rgb(0,0,0);stroke-width:2" />
+                    <!-- <rect x=6 y=6 width="288" height="288" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
+                    <rect x=18 y=18 width="264" height="264" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
+                    <!-- <rect x=30 y=30 width="240" height="240" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
+                    <rect x=42 y=42 width="216" height="216" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
+                    <!-- <rect x=54 y=54 width="192" height="192" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
+                    <rect x=66 y=66 width="168" height="168" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
+                    <!-- <rect x=78 y=78 width="144" height="144" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
+                    <rect x=90 y=90 width="120" height="120" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
+                    <!-- <rect x=102 y=102 width="96" height="96" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
+                    <rect x=114 y=114 width="72" height="72" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
+                    <!-- <rect x=126 y=126 width="48" height="48" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
+                    <rect x=138 y=138 width="24" height="24" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
+                    <polygon id="taste_graph" points="75,150 150,75 225,150 150,225" fill-opacity="0.0"
+                        style="stroke:rgb(0,0,0);stroke-width:2"></polygon>
+                </svg>
+            </div>
+            <div style="width: 40%;">
+                <div class="taste_slider_plate" style="border-top: none;">
+                    <label for="anger_slider">
+                        <h4>ANGER</h4>
+                        <h4>GRATITUDE</h4>
+                    </label>
+                    <input id="anger_slider" type="range" min="0" max="150">
+                </div>
+                <div class="taste_slider_plate">
+                    <label for="love_slider">
+                        <h4>HATE</h4>
+                        <h4>LOVE</h4>
+                    </label>
+                    <input id="love_slider" type="range" min="0" max="150">
+                </div>
+                <div class="taste_slider_plate">
+                    <label for="happiness_slider">
+                        <h4>SADNESS</h4>
+                        <h4>JOY</h4>
+                    </label>
+                    <input id="happiness_slider" type="range" min="0" max="150">
+                </div>
+                <div class="taste_slider_plate" style="border-bottom: 2px solid black;">
+                    <label for="sadness_slider">
+                        <h4>FEAR</h4>
+                        <h4>HOPE</h4>
+                    </label>
+                    <input id="sadness_slider" type="range" min="0" max="150">
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; border-top: 2px solid black;">
+            <div style="width: 60%; border-right: 2px solid black; padding: 24px;">
+                <h3>Total</h3>
+                <h1 id="taste_price" style="font-size: 80px; margin-top: 32px;">300EC</h1>
+            </div>
+            <div id="cook_now_button">
+                <h2 style="font-weight: 700; margin-right: 24px; font-size: 32px;">Cook now</h2>
+                <div><img src="arrow.svg" width="48px" style="margin-bottom: 4px;"></div>
+            </div>
+        </div>
+    </div>
+    <div id="product_cooking_section">
+        <div class="scrolling_bar">
+            <h2 class="scrolling_bar_content">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
+        </div>
+        <div class="scrolling_bar">
+            <h2 class="scrolling_bar_content_opp">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
+        </div>
+
+
+        <h1 id="countdown_timer" style="font-size: 160px; margin: 80px 0px 56px;"></h1>
+
+        <div class="scrolling_bar">
+            <h2 class="scrolling_bar_content">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
+        </div>
+        <div class="scrolling_bar">
+            <h2 class="scrolling_bar_content_opp">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
+        </div>
+    </div>
+    <div id="profile_section">
+        <div style="display: flex;">
+            <div style="padding: 24px; border-right: 2px solid black;">
+                <h2>HELLO CITIZEN #<span id="citizen_id_field"
+                        style="font-weight: 700;font-size: 28px;line-height: 34px;">123</span>
                 </h2>
             </div>
-            <div style="display: flex">
-                <div style="width: 50%; border-right: 2px solid black; border-top: 2px solid black;">
-                    <div class="intro_step" style="border-top: none;">
-                        <div class="intro_step_number">
-                            <h2>1</h2>
-                        </div>
-                        <div class="intro_step_desc">
-                            <p>Put a piece of substrate you want to ingest in the R-Eat.</p>
-                        </div>
-                    </div>
-                    <div class="intro_step">
-                        <div class="intro_step_number">
-                            <h2>2</h2>
-                        </div>
-                        <div class="intro_step_desc">
-                            <p>Choose between an incredible array of feelings and emotions you want to experience during
-                                your breakfast, lunch, or dinner.</p>
-                        </div>
-                    </div>
-                    <div class="intro_step">
-                        <div class="intro_step_number">
-                            <h2>3</h2>
-                        </div>
-                        <div class="intro_step_desc">
-                            <p>Are you feeling fancy today? Treat yourself with an additional pinch of joy for lunch,
-                                and positive vibes are guaranteed for the rest of the day! Are you short on emoticoins?
-                                No worries, move that joy slider down a bit, and don’t forget - tomorrow is a new day to
-                                earn some happiness again!</p>
-                        </div>
-                    </div>
-                    <div class="intro_step">
-                        <div class="intro_step_number">
-                            <h2>4</h2>
-                        </div>
-                        <div class="intro_step_desc">
-                            <p>When your recipe is spot-on, hit the COOK NOW button and enjoy (or hate) your meal!</p>
-                        </div>
-                    </div>
-                </div>
-                <button id="start_button">
-                    <h1>I'm hungry</h1>
-                    <img src="arrow.svg" width="56px" style="margin-left: 8px; margin-bottom: 10px;">
-                </button>
+            <div style="padding: 24px;">
+                <h2>WANT A PIECE OF ME? ;)</h2>
             </div>
         </div>
-        <div id="product_selected_section">
-            <div class="product_listing">
-                <div class="product_listing_desc">
-                    <h1 id="product_selected_title">WASABI MACARONI</h1>
-                    <p id="product_selected_desc" style="width: 80%;">Real fresh-grated wasabi tastes bright and green
-                        with a touch of
-                        quickly
-                        fading heat. It is
-                        pungent, yet delicate enough to let the flavor of raw fish shine.</p>
-                </div>
-
-                <div class="product_listing_functions">
-                    <div>
-                        <h1 id="product_selected_price">15</h1>
-                        <h3>EC</h3>
-                    </div>
-                    <div style="margin-bottom: 4px;">
-                        <img src="heart.svg" width="24px" style="margin-right: 4px;">
-                        <img src="share.svg" width="24px">
-                    </div>
-                    <div id="back_button_button">
-                        <img src="arrow.svg" width="32px" style="transform: rotate(180deg);">
-                    </div>
+        <div style="border-top: 2px solid black; display: flex;">
+            <div style="border-right: 2px solid black;">
+                <div id="profile_pic_container">
+                    <img id="profile_pic" src="profile_pics/profile_pic (1).jpg">
                 </div>
             </div>
-            <div style="display: flex; height: 100%;">
-                <div id="taste_graph_container" style="display: flex; justify-content: center; align-items: center;">
-                    <svg id="taste_graph_svg" height="300px" width="300px">
-                        <line x1="150" y1="0" x2="150" y2="300" style="stroke:rgb(0,0,0);stroke-width:2" />
-                        <line x1="0" y1="150" x2="300" y2="150" style="stroke:rgb(0,0,0);stroke-width:2" />
-                        <!-- <rect x=6 y=6 width="288" height="288" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
-                        <rect x=18 y=18 width="264" height="264" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
-                        <!-- <rect x=30 y=30 width="240" height="240" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
-                        <rect x=42 y=42 width="216" height="216" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
-                        <!-- <rect x=54 y=54 width="192" height="192" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
-                        <rect x=66 y=66 width="168" height="168" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
-                        <!-- <rect x=78 y=78 width="144" height="144" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
-                        <rect x=90 y=90 width="120" height="120" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
-                        <!-- <rect x=102 y=102 width="96" height="96" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
-                        <rect x=114 y=114 width="72" height="72" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
-                        <!-- <rect x=126 y=126 width="48" height="48" fill-opacity="0.0" style="stroke:rgb(0,0,0,0.2);stroke-width:2" ></rect> -->
-                        <rect x=138 y=138 width="24" height="24" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0,0.2);stroke-width:2"></rect>
-                        <polygon id="taste_graph" points="75,150 150,75 225,150 150,225" fill-opacity="0.0"
-                            style="stroke:rgb(0,0,0);stroke-width:2"></polygon>
-                    </svg>
-                </div>
-                <div style="width: 40%;">
-                    <div class="taste_slider_plate" style="border-top: none;">
-                        <label for="anger_slider">
-                            <h4>ANGER</h4>
-                            <h4>GRATITUDE</h4>
-                        </label>
-                        <input id="anger_slider" type="range" min="0" max="150">
+            <div style="padding: 16px; width: 40%; display: flex; justify-content: center; align-items: center;">
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 70%;">
+                    <h2 style="font-size: 16px;">TODAY’S HEALTH STATE</h2>
+                    <div id="star_rating">
+                        <img src="star-outline.svg">
+                        <img src="star-outline.svg">
+                        <img src="star-outline.svg">
+                        <img src="star-outline.svg">
+                        <img src="star-outline.svg">
                     </div>
-                    <div class="taste_slider_plate">
-                        <label for="love_slider">
-                            <h4>HATE</h4>
-                            <h4>LOVE</h4>
-                        </label>
-                        <input id="love_slider" type="range" min="0" max="150">
-                    </div>
-                    <div class="taste_slider_plate">
-                        <label for="happiness_slider">
-                            <h4>SADNESS</h4>
-                            <h4>JOY</h4>
-                        </label>
-                        <input id="happiness_slider" type="range" min="0" max="150">
-                    </div>
-                    <div class="taste_slider_plate" style="border-bottom: 2px solid black;">
-                        <label for="sadness_slider">
-                            <h4>FEAR</h4>
-                            <h4>HOPE</h4>
-                        </label>
-                        <input id="sadness_slider" type="range" min="0" max="150">
-                    </div>
+                    <p>Think about drinking water!</p>
                 </div>
             </div>
-            <div style="display: flex; border-top: 2px solid black;">
-                <div style="width: 60%; border-right: 2px solid black; padding: 24px;">
-                    <h3>Total</h3>
-                    <h1 id="taste_price" style="font-size: 80px; margin-top: 32px;">300EC</h1>
-                </div>
-                <div id="cook_now_button">
-                    <h2 style="font-weight: 700; margin-right: 24px; font-size: 32px;">Cook now</h2>
-                    <div><img src="arrow.svg" width="48px" style="margin-bottom: 4px;"></div>
+            <div
+                style="padding: 16px; border-left: 2px solid black; width: 40%; display: flex; align-items: center; justify-content: center;">
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 80%;">
+                    <h2 style="font-weight: 400; margin-bottom: 8px;">Account balance</h2>
+                    <h2 id="account_balance">123</h2>
                 </div>
             </div>
         </div>
-        <div id="product_cooking_section">
-            <div class="scrolling_bar">
-                <h2 class="scrolling_bar_content">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
-            </div>
-            <div class="scrolling_bar">
-                <h2 class="scrolling_bar_content_opp">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
-            </div>
-
-
-            <h1 id="countdown_timer" style="font-size: 160px; margin: 80px 0px 56px;"></h1>
-
-            <div class="scrolling_bar">
-                <h2 class="scrolling_bar_content">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
-            </div>
-            <div class="scrolling_bar">
-                <h2 class="scrolling_bar_content_opp">PLEASE WAIT . PLEASE WAIT . PLEASE WAIT</h2>
-            </div>
+        <div style="padding: 16px; border-top: 2px solid black;">
+            <h4 style="font-weight: 700;">FRIENDS ACTIVITY</h4>
         </div>
-        <div id="profile_section">
-            <div style="display: flex;">
-                <div style="padding: 24px; border-right: 2px solid black;">
-                    <h2>HELLO CITIZEN #<span id="citizen_id_field"
-                            style="font-weight: 700;font-size: 28px;line-height: 34px;">123</span>
-                    </h2>
-                </div>
-                <div style="padding: 24px;">
-                    <h2>WANT A PIECE OF ME? ;)</h2>
-                </div>
-            </div>
-            <div style="border-top: 2px solid black; display: flex;">
-                <div style="border-right: 2px solid black;">
-                    <div id="profile_pic_container">
-                        <img id="profile_pic" src="profile_pics/profile_pic (1).jpg">
-                    </div>
-                </div>
-                <div style="padding: 16px; width: 40%; display: flex; justify-content: center; align-items: center;">
-                    <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 70%;">
-                        <h2 style="font-size: 16px;">TODAY’S HEALTH STATE</h2>
-                        <div id="star_rating">
-                            <img src="star-outline.svg">
-                            <img src="star-outline.svg">
-                            <img src="star-outline.svg">
-                            <img src="star-outline.svg">
-                            <img src="star-outline.svg">
-                        </div>
-                        <p>Think about drinking water!</p>
-                    </div>
-                </div>
-                <div
-                    style="padding: 16px; border-left: 2px solid black; width: 40%; display: flex; align-items: center; justify-content: center;">
-                    <div style="display: flex; justify-content: center; flex-wrap: wrap; width: 80%;">
-                        <h2 style="font-weight: 400; margin-bottom: 8px;">Account balance</h2>
-                        <h2 id="account_balance">123</h2>
-                    </div>
-                </div>
-            </div>
-            <div style="padding: 16px; border-top: 2px solid black;">
-                <h4 style="font-weight: 700;">FRIENDS ACTIVITY</h4>
-            </div>
-            <div id="friends_section">
-            </div>
-
-            <div style="padding: 16px; border-top: 2px solid black;">
-                <h4>Daily recommandations</h4>
-            </div>
-            <div id="cat_Daily" class="recommandations_container">
-            </div>
-
-            <div style="padding: 16px; border-top: 2px solid black;">
-                <h4>On your list</h4>
-            </div>
-            <div id="cat_YourList" class="recommandations_container">
-            </div>
-
-            <div style="padding: 16px; border-top: 2px solid black;">
-                <h4>Your friends tasted it too</h4>
-            </div>
-            <div id="cat_YourFriends" class="recommandations_container">
-            </div>
-
-            <div style="padding: 16px; border-top: 2px solid black;">
-                <h4>Trending now</h4>
-            </div>
-            <div id="cat_Trending" class="recommandations_container">
-            </div>
-
-            <div style="padding: 16px; border-top: 2px solid black;">
-                <h4>BECAUSE YOU LIKED “<span id="cat_LikedThis_title" style="font-weight: 700;">MARS LANDING</span>”</h4>
-            </div>
-            <div id="cat_LikedThis" class="recommandations_container">
-            </div>
-
+        <div id="friends_section">
         </div>
+
+        <div style="padding: 16px; border-top: 2px solid black;">
+            <h4>Daily recommandations</h4>
+        </div>
+        <div id="cat_Daily" class="recommandations_container">
+        </div>
+
+        <div style="padding: 16px; border-top: 2px solid black;">
+            <h4>On your list</h4>
+        </div>
+        <div id="cat_YourList" class="recommandations_container">
+        </div>
+
+        <div style="padding: 16px; border-top: 2px solid black;">
+            <h4>Your friends tasted it too</h4>
+        </div>
+        <div id="cat_YourFriends" class="recommandations_container">
+        </div>
+
+        <div style="padding: 16px; border-top: 2px solid black;">
+            <h4>Trending now</h4>
+        </div>
+        <div id="cat_Trending" class="recommandations_container">
+        </div>
+
+        <div style="padding: 16px; border-top: 2px solid black;">
+            <h4>BECAUSE YOU LIKED “<span id="cat_LikedThis_title" style="font-weight: 700;">MARS LANDING</span>”</h4>
+        </div>
+        <div id="cat_LikedThis" class="recommandations_container">
+        </div>
+
     </div>
 
 
