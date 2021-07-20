@@ -8,7 +8,7 @@ const multifun_suit = { name: "The multifunctional suit", desc: "A green screen 
 
 const plushie = { name: "Plushie", desc: "A big fluffy robotic plushie that has the ability to change forms - it can be a blanket, it can grow tentacles, it can roll around as a ball. It needs care and attention, it stimulates the effect of breathing, it’s warm, it purrs and it’s sometimes a bit naughty.", image: "https://images-na.ssl-images-amazon.com/images/I/61JPjxijn0L._SL1000_.jpg", price: 300, badges: [{ text: "Only 30% child labour!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Love is love", font_size: "24px", line_height: "25px", width: "60px" }] }
 
-const dildos = { name: "Sex flex cylindars", desc: "Command your lot of new cylinders to expand your pleasure horizons. Buy a costumize version of pleasure and link your cylindar with all the sex slaves at your disposition. Multiplicate the change to enjoy meaningful sexual interactions with strangers. See you on sex flex app ;)", image: "img-products/sexflex_dildos.png", price: 300, badges: [{ text: "Only 30% child labour!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Love is love", font_size: "24px", line_height: "25px", width: "60px" }] }
+const dildos = { name: "Sex flex cylindars", desc: "Command your lot of new cylinders to expand your pleasure horizons. Buy a costumize version of pleasure and link your cylindar with all the sex slaves at your disposition. Multiplicate the change to enjoy meaningful sexual interactions with strangers. See you on sex flex app ;)", image: "img-products/sexflex_dildos.png", price: 300, badges: [{ text: "Be creative, have sex!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Hate is hate", font_size: "24px", line_height: "25px", width: "60px" }] }
 
 // Sets products database
 var all_products = [multifun_suit, plushie, dildos]
@@ -104,7 +104,7 @@ function changeProduct() {
         document.getElementById("time_bar_counter").style.width = "100%"
         document.getElementById("time_bar_counter").classList.add("timebar_animation");
 
-        //Ser repeat transition
+        //Set repeat transition
         setTimeout(setProductBadges, (((product_time * 1000) + 500) / 2), current_product);
         setTimeout(changeProduct, (product_time * 1000) + 500);
 
