@@ -4,9 +4,9 @@ var popup_mode = false
 var rip_PIPEsystem = new Audio('rip_PIPEsystem.ogg');
 
 // Products
-const multifun_suit = { name: "The multifunctional suit", desc: "A green screen whole body suit that recycles all bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.", image: "url('https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg')", price: 300, badges: [{ text: "Only 30% oxygen polution", font_size: "16px", line_height: "18px", width: "90px" }, { text: "AIDS free", font_size: "24px", line_height: "25px", width: "60px" }] }
+const multifun_suit = { name: "The multifunctional suit", desc: "A green screen whole body suit that recycles all bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.", image: "https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg", price: 300, badges: [{ text: "Only 30% oxygen polution", font_size: "16px", line_height: "18px", width: "90px" }, { text: "AIDS free", font_size: "24px", line_height: "25px", width: "60px" }] }
 
-const plushie = { name: "Plushie", desc: "A big fluffy robotic plushie that has the ability to change forms - it can be a blanket, it can grow tentacles, it can roll around as a ball. It needs care and attention, it stimulates the effect of breathing, it’s warm, it purrs and it’s sometimes a bit naughty.", image: "url('https://images-na.ssl-images-amazon.com/images/I/61JPjxijn0L._SL1000_.jpg')", price: 300, badges: [{ text: "Only 30% child labour!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Love is love", font_size: "24px", line_height: "25px", width: "60px" }] }
+const plushie = { name: "Plushie", desc: "A big fluffy robotic plushie that has the ability to change forms - it can be a blanket, it can grow tentacles, it can roll around as a ball. It needs care and attention, it stimulates the effect of breathing, it’s warm, it purrs and it’s sometimes a bit naughty.", image: "https://images-na.ssl-images-amazon.com/images/I/61JPjxijn0L._SL1000_.jpg", price: 300, badges: [{ text: "Only 30% child labour!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Love is love", font_size: "24px", line_height: "25px", width: "60px" }] }
 
 // Sets products database
 var all_products = [multifun_suit, plushie]
@@ -42,7 +42,7 @@ function changeProduct() {
         //Set product info
         document.getElementById("product_name").innerHTML = current_product.name
         document.getElementById("product_description").innerHTML = current_product.desc
-        document.getElementById("main_plate").style.backgroundImage = current_product.image
+        document.getElementById("main_plate").style.backgroundImage = "url('" + current_product.image + "')"
         document.getElementById("product_price").innerHTML = String(current_product.price + "EC")
         document.getElementById("product_price_next").innerHTML = String((current_product.price + (Math.floor(Math.random() * 11) * 100)) + " EC")
 
@@ -130,7 +130,7 @@ function product_popup() {
     rip_PIPEsystem.play();
     popup_mode = true
 
-    document.getElementById("popup_buy").style.display = "block"
+    document.getElementById("popup_buy").style.display = "flex"
 
     document.getElementById("citizen_id").innerHTML = '#' + Math.floor(Math.random() * 1E16)
     document.getElementById("product_delivered_img").src = current_product.image

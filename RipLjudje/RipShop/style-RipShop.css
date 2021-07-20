@@ -191,6 +191,7 @@ p {
     z-index: 4;
     width: 706px;
     display: none;
+    flex-direction: column;
 }
 
 .receipt_lines {

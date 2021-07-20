@@ -44,82 +44,76 @@
 
         <div id="info_hud">
 
-            <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+            <div class="side_column">
 
-                <div class="side_column">
+                <div class="info_plate" style="width: 264px; margin-bottom: 16px;" id="purchase_goal">
+                    <p style="margin-bottom: 16px;">Daily purchase goal:</p>
+                    <h3 style="margin-bottom: 16px;"><span
+                            style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">0</span>/55
+                    </h3>
+                    <h4 style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">Happy streak <br> (302 days) in
+                        danger!</h4>
+                </div>
 
-                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;" id="purchase_goal">
-                        <p style="margin-bottom: 16px;">Daily purchase goal:</p>
-                        <h3 style="margin-bottom: 16px;"><span
-                                style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">0</span>/55
-                        </h3>
-                        <h4 style="color: #EB5757; text-shadow: 0 0 2px #EB5757;">Happy streak <br> (302 days) in
-                            danger!</h4>
+                <div class="info_plate" style="width: 264px; margin-bottom: 16px;">
+                    <p id="product_name">The multifunctional suit</p>
+                </div>
+
+                <div class="info_plate" style="width: 264px; margin-bottom: 16px;">
+                    <p id="product_description">A green screen whole body suit that recycles all bodily fluids,
+                        ensures the optimal
+                        temperature
+                        and
+                        stimulates blood circulation in the body.</p>
+                </div>
+
+                <div class="info_plate" style="width: 264px;">
+                    <p style="margin-bottom: 16px;">AI genious bot:</p>
+                    <h3 id="ai_testamonial">“Best decision!”</h3>
+                </div>
+
+            </div>
+
+
+            <div class="side_column" style="justify-content: flex-end; margin-bottom: 208px;">
+
+                <div class="info_plate" style="margin-bottom: 16px; height: 338px;" id="person_stats">
+                    <p id="stat1_lable">Life</p>
+                    <div class="person_stats_graph_plate" style="--graph_color: #FE8091">
+                        <div class="person_stats_graph person_stats_graph_animation" style="--value: 30%;"
+                            id="stat1_graph">
+                            <p style="width: 50px;">30+</p>
+                        </div>
                     </div>
 
-                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;">
-                        <p id="product_name">The multifunctional suit</p>
+                    <p id="stat2_lable">Happiness</p>
+                    <div class="person_stats_graph_plate" style="--graph_color: #08DFE8">
+                        <div class="person_stats_graph person_stats_graph_animation" style="--value: 70%;"
+                            id="stat2_graph">
+                            <p style="width: 50px;">70+</p>
+                        </div>
                     </div>
 
-                    <div class="info_plate" style="width: 264px; margin-bottom: 16px;">
-                        <p id="product_description">A green screen whole body suit that recycles all bodily fluids,
-                            ensures the optimal
-                            temperature
-                            and
-                            stimulates blood circulation in the body.</p>
+                    <p id="stat3_lable">Respect</p>
+                    <div class="person_stats_graph_plate" style="--graph_color: #AF43BC">
+                        <div class="person_stats_graph person_stats_graph_animation" style="--value: 5%;"
+                            id="stat3_graph">
+                            <p style="width: 50px;">5+</p>
+                        </div>
                     </div>
 
-                    <div class="info_plate" style="width: 264px;">
-                        <p style="margin-bottom: 16px;">AI genious bot:</p>
-                        <h3 id="ai_testamonial">“Best decision!”</h3>
+                    <p id="stat4_lable">Love</p>
+                    <div class="person_stats_graph_plate" style="--graph_color: #EB5757">
+                        <div class="person_stats_graph person_stats_graph_animation" style="--value: 60%;"
+                            id="stat4_graph">
+                            <p style="width: 50px;">60+</p>
+                        </div>
                     </div>
 
                 </div>
 
             </div>
 
-            <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-
-                <div class="side_column" style="justify-content: flex-end; margin-bottom: 208px;">
-
-                    <div class="info_plate" style="margin-bottom: 16px;" id="person_stats">
-                        <p id="stat1_lable">Life</p>
-                        <div class="person_stats_graph_plate" style="--graph_color: #FE8091">
-                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 30%;"
-                                id="stat1_graph">
-                                <p style="width: 50px;">30+</p>
-                            </div>
-                        </div>
-
-                        <p id="stat2_lable">Happiness</p>
-                        <div class="person_stats_graph_plate" style="--graph_color: #08DFE8">
-                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 70%;"
-                                id="stat2_graph">
-                                <p style="width: 50px;">70+</p>
-                            </div>
-                        </div>
-
-                        <p id="stat3_lable">Respect</p>
-                        <div class="person_stats_graph_plate" style="--graph_color: #AF43BC">
-                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 5%;"
-                                id="stat3_graph">
-                                <p style="width: 50px;">5+</p>
-                            </div>
-                        </div>
-
-                        <p id="stat4_lable">Love</p>
-                        <div class="person_stats_graph_plate" style="--graph_color: #EB5757">
-                            <div class="person_stats_graph person_stats_graph_animation" style="--value: 60%;"
-                                id="stat4_graph">
-                                <p style="width: 50px;">60+</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -135,69 +129,76 @@
         </div>
 
         <div id="popup_buy" class="info_plate">
-            <div style="display: flex; justify-content: space-between;">
-                <div>
-                    <h3 style="margin-bottom: 8px;">Ordered successful!</h3>
-                    <p>Citizen token: <span id="citizen_id">#29343285</span></p>
-                </div>
-                <img src="rivertm-logo.png" height="72px">
-            </div>
 
-            <div style="display: flex; flex-wrap: nowrap; margin: 24px 0px;">
-                <div class="info_plate"
-                    style="width: 313px; padding: 16px; display: flex; align-items: center; justify-content: center; margin-right: 24px;"
-                    id="product_delivered_img">
-                    <img style="width: 90%;"
-                        src="https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg"></img>
+            <div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-bottom: 8px;">Ordered successful!</h3>
+                        <p>Citizen token: <span id="citizen_id">#29343285</span></p>
+                    </div>
+                    <img src="rivertm-logo.png" height="72px">
                 </div>
-                <div style="width: 313px;">
-                    <div class="info_plate" style="margin-bottom: 16px;" id="product_delivered_name">The
-                        multifunctional suit</div>
-                    <div class="info_plate" id="product_delivered_desc">A green screen whole body suit that recycles all
-                        bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.
+
+                <div style="display: flex; flex-wrap: nowrap; margin: 48px 0px;">
+                    <div class="info_plate"
+                        style="width: 313px; padding: 16px; display: flex; align-items: center; justify-content: center; margin-right: 24px;">
+                        <img id="product_delivered_img" style="width: 90%;"
+                            src="https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg"></img>
+                    </div>
+                    <div style="width: 313px;">
+                        <div class="info_plate" style="margin-bottom: 16px;" id="product_delivered_name">The
+                            multifunctional suit</div>
+                        <div class="info_plate" id="product_delivered_desc">A green screen whole body suit that recycles
+                            all
+                            bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.
+                        </div>
                     </div>
                 </div>
+
+                <div style="margin-bottom: 64px;">
+
+                    <div class="receipt_lines">
+                        <h4>Price</h4>
+                        <h4 id="product_delivered_price">300EC</h4>
+                    </div>
+                    <div class="receipt_lines">
+                        <h4>Social credit score discount</h4>
+                        <h4 id="product_delivered_discount">1EC</h4>
+                    </div>
+                    <hr>
+                    <div class="receipt_lines">
+                        <h4>Final price</h4>
+                        <h4 id="product_delivered_priceFinal">299EC</h4>
+                    </div>
+                    <hr>
+                    <div class="receipt_lines">
+                        <h4>Account balance</h4>
+                        <h4 id="product_delivered_AccountBalance">-302102.12312EC</h4>
+                    </div>
+                    <div class="receipt_lines">
+                        <h4>Est. Sexflix services left</h4>
+                        <h4 id="product_delivered_SexflixHours">21312213 hours</h4>
+                    </div>
+                    <hr>
+                    <div class="receipt_lines">
+                        <h4>Citizen personal message:</h4>
+                        <h4>“Get to pleasin”</h4>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div style="margin-bottom: 64px;">
-
-                <div class="receipt_lines">
-                    <h4>Price</h4>
-                    <h4 id="product_delivered_price">300EC</h4>
+            <div>
+                <div class="urgent_plate_yellow" style="padding: 24px 0px; margin-bottom: 24px;" id="delivery_status">
+                    <h2 style="font-size: 72px;">NOW DELIVERING</h2>
                 </div>
-                <div class="receipt_lines">
-                    <h4>Social credit score discount</h4>
-                    <h4 id="product_delivered_discount">1EC</h4>
+                <div class="counter_bar" style="width: 100%; margin-bottom: 16px;">
+                    <div id="delivery_bar_counter" class="deliverybar_animation" style="--duration: 32;"></div>
                 </div>
-                <hr>
-                <div class="receipt_lines">
-                    <h4>Final price</h4>
-                    <h4 id="product_delivered_priceFinal">299EC</h4>
-                </div>
-                <hr>
-                <div class="receipt_lines">
-                    <h4>Account balance</h4>
-                    <h4 id="product_delivered_AccountBalance">-302102.12312EC</h4>
-                </div>
-                <div class="receipt_lines">
-                    <h4>Est. Sexflix services left</h4>
-                    <h4 id="product_delivered_SexflixHours">21312213 hours</h4>
-                </div>
-                <hr>
-                <div class="receipt_lines">
-                    <h4>Citizen personal message:</h4>
-                    <h4>“Get to pleasin”</h4>
-                </div>
+                <h4 id="delivery_bar_msg">Finding citizen location</h4>
 
             </div>
-
-            <div class="urgent_plate_yellow" style="padding: 24px 0px; margin-bottom: 24px;" id="delivery_status">
-                <h2 style="font-size: 72px;">NOW DELIVERING</h2>
-            </div>
-            <div class="counter_bar" style="width: 100%; margin-bottom: 16px;">
-                <div id="delivery_bar_counter" class="deliverybar_animation" style="--duration: 32;"></div>
-            </div>
-            <h4 id="delivery_bar_msg">Finding citizen location</h4>
 
 
         </div>

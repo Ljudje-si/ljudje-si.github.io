@@ -1,7 +1,7 @@
 console.log("App connected")
 
 var interval_countdown
-var countdown_alarm = new Audio('countdown_alarm.ogg')
+var countdown_alarm = new Audio()
 
 //Food database
 
@@ -227,6 +227,7 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         if (timer == 0) {
+            countdown_alarm.src = 'countdown_alarm.mp3'
             countdown_alarm.play()
             clearInterval(interval_countdown)
             display.classList.add("flash_element")
