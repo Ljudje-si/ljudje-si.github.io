@@ -1,6 +1,9 @@
 body {
     padding: 0px;
     margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Jura', sans-serif;
 }
 
@@ -27,12 +30,14 @@ p {
 }
 
 #main_plate {
-    height: 97px;
+    width: 834px;
+    height: 1194px;
     background-color: white;
     border: 1px solid black;
+    margin: 56px;
     position: relative;
     background-image: url("https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg");
-    background-position: center;
+    background-position: 50% 95%;
     background-repeat: no-repeat;
     /* background-size: cover; */
 }
