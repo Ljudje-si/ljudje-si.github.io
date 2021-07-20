@@ -4,14 +4,16 @@ var popup_mode = false
 var rip_PIPEsystem = new Audio('rip_PIPEsystem.ogg');
 
 // Products
-const multifun_suit = { name: "The multifunctional suit", desc: "A green screen whole body suit that recycles all bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.", image: "https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg", price: 300, badges: [{ text: "Only 30% oxygen polution", font_size: "16px", line_height: "18px", width: "90px" }, { text: "AIDS free", font_size: "24px", line_height: "25px", width: "60px" }] }
+const multifun_suit = { name: "The multifunctional suit", desc: "A green screen whole body suit that recycles all bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.", image: "https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg", price: 313, badges: [{ text: "Only 30% oxygen polution", font_size: "16px", line_height: "18px", width: "90px" }, { text: "AIDS free", font_size: "24px", line_height: "25px", width: "60px" }] }
 
-const plushie = { name: "Plushie", desc: "A big fluffy robotic plushie that has the ability to change forms - it can be a blanket, it can grow tentacles, it can roll around as a ball. It needs care and attention, it stimulates the effect of breathing, it’s warm, it purrs and it’s sometimes a bit naughty.", image: "https://images-na.ssl-images-amazon.com/images/I/61JPjxijn0L._SL1000_.jpg", price: 300, badges: [{ text: "Only 30% child labour!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Love is love", font_size: "24px", line_height: "25px", width: "60px" }] }
+const plushie = { name: "Plushie", desc: "A big fluffy robotic plushie that has the ability to change forms - it can be a blanket, it can grow tentacles, it can roll around as a ball. It needs care and attention, it stimulates the effect of breathing, it’s warm, it purrs and it’s sometimes a bit naughty.", image: "https://images-na.ssl-images-amazon.com/images/I/61JPjxijn0L._SL1000_.jpg", price: 56, badges: [{ text: "Only 30% child labour!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Love is love", font_size: "24px", line_height: "25px", width: "60px" }] }
 
-const dildos = { name: "Sex flex cylindars", desc: "Command your lot of new cylinders to expand your pleasure horizons. Buy a costumize version of pleasure and link your cylindar with all the sex slaves at your disposition. Multiplicate the change to enjoy meaningful sexual interactions with strangers. See you on sex flex app ;)", image: "img-products/sexflex_dildos.png", price: 300, badges: [{ text: "Be creative, have sex!", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Hate is hate", font_size: "24px", line_height: "25px", width: "60px" }] }
+const dildos = { name: "Sex flex cylindars", desc: "Command your lot of new cylinders to expand your pleasure horizons. Buy a costumize version of pleasure and link your cylindar with all the sex slaves at your disposition. Multiplicate the change to enjoy meaningful sexual interactions with strangers. See you on sex flex app ;)", image: "img-products/sexflex_dildos.png", price: 221, badges: [{ text: "Tested on human only", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Be creative, have sex!", font_size: "16px", line_height: "18px", width: "90px" }] }
+
+const poncho = { name: "Thermal poncho", desc: "Stay comfy, stay safe, preserve the maximum of your body heat. It is made from a ripstop type material for added strength and with a surface that reflects up to 90% of body heat. Never go out without protection, you may not survive without us!", image: "img-products/thermal_poncho.jpg", price: 298, badges: [{ text: "Radioactivity free", font_size: "16px", line_height: "18px", width: "90px" }, { text: "Hate is hate", font_size: "24px", line_height: "25px", width: "60px" }] }
 
 // Sets products database
-var all_products = [multifun_suit, plushie, dildos]
+var all_products = [multifun_suit, plushie, dildos, poncho]
 
 var person_stats_lables = ["Life", "Happiness", "Respect", "Love", "Romance", "Wit", "Intelligence"]
 var aiBot_testamonials = ["“Best decision!”", "“Can't go wrong with this one!”", "“This was made for you!”", "“Guaranteed improvement!”"]
@@ -24,6 +26,7 @@ function setProductBadges(current_product) {
         product_badges += "<div class='product_badge'><p style='" + "font-size: " + item.font_size + ";" + "line-height: " + item.line_height + ";" + "width: " + item.width + "'>" + item.text + "</p></div>"
     })
     document.getElementById("product_badges").innerHTML = String(product_badges)
+    document.getElementById("product_badges").style.display = "flex"
 }
 
 var product_index = 0
@@ -35,6 +38,8 @@ function changeProduct() {
 
         if (product_index > all_products.length - 1) { product_index = 0 }
         current_product = all_products[product_index]
+
+        document.getElementById("product_badges").style.display = "none"
 
         //Set fade in animation
         document.getElementById("main_plate").classList.remove("animate_fade_in");
