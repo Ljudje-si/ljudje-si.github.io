@@ -1,11 +1,14 @@
 body {    
+    margin: 0;
+    padding: 0;
+}
+
+#main_plate {
     background-color: white;
     border: 1px solid black;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 24px;
+    height: 97vh;
 }
 
 h1 {
