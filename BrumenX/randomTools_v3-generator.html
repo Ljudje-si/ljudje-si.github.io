@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brumen X</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #canvas_setup {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: 30px;
+            border: 2px solid black;
+            padding: 32px;
+            width: 300px;
+            font-size: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            z-index: 2;
+        }
+
+        #canvas_setup input {
+            width: 100%;
+            margin: 4px 0px 8px;
+        }
+
+        #canvas_setup button {
+            width: 100%;
+            margin-top: 12px;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: black;">
+
+    <div id="canvas_setup">
+        <label for="quantity">Canvas width [mm]</label>
+        <input type="number" id="canvas_width" name="quantity">
+        <label for="quantity">Canvas height [mm]</label>
+        <input type="number" id="canvas_height" name="quantity">
+        <button
+            onclick="canvasSizeInput(document.getElementById('canvas_width').value, document.getElementById('canvas_height').value)"
+            ,>Submit</button>
+        <button onclick="canvasSizeInput(window.innerWidth, window.innerHeight)">Make window size</button>
+    </div>
+
+    <div
+        style="background-color: red; width: 100%; height: 100%; position: absolute; top: 0; left: 0; mix-blend-mode: multiply; z-index: 1; display: block;">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <script src="js/app-randomTools_v3-generator.js"></script>
+
+</body>
+
+</html>
