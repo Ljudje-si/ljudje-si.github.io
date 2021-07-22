@@ -3,6 +3,9 @@ console.log("App connected")
 var interval_countdown
 var countdown_alarm = new Audio()
 
+var countdown_alarm = document.createElement("audio")
+countdown_alarm.setAttribute("src", "countdown_alarm.mp3")
+
 //Food database
 
 const Wasabi_macaroni = { title: "Wasabi Macaroni", desc: "Real fresh-grated wasabi tastes bright and green with a touch of quickly fading heat. It is pungent, yet delicate enough to let the flavor of raw fish shine.", background: "gradient (1).gif" }
@@ -227,7 +230,6 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         if (timer == 0) {
-            countdown_alarm.src = 'countdown_alarm.mp3'
             countdown_alarm.play()
             clearInterval(interval_countdown)
             display.classList.add("flash_element")
