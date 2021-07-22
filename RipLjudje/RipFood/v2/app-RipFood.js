@@ -1,7 +1,6 @@
 console.log("App connected")
 
 var interval_countdown
-var countdown_alarm = new Audio()
 
 var countdown_alarm = document.createElement("audio")
 countdown_alarm.setAttribute("src", "countdown_alarm.mp3")
