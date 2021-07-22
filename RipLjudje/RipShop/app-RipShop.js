@@ -31,7 +31,7 @@ function setProductBadges(current_product) {
     document.getElementById("product_badges").style.display = "flex"
 }
 
-var product_index = 0
+var product_index = Math.floor(Math.random()*all_products.length)
 var current_product = all_products[product_index];
 
 function changeProduct() {
