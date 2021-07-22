@@ -1,7 +1,9 @@
 console.log("app connected")
 
 var popup_mode = false
-var rip_PIPEsystem = new Audio('rip_PIPEsystem.ogg');
+
+var rip_PIPEsystem = document.createElement("audio")
+rip_PIPEsystem.setAttribute("src", "rip_PIPEsystem.mp3")
 
 // Products
 const multifun_suit = { name: "The multifunctional suit", desc: "A green screen whole body suit that recycles all bodily fluids, ensures the optimal temperature and stimulates blood circulation in the body.", image: "https://cdn.shopify.com/s/files/1/0312/0801/3955/products/chroma-key-green-screen-bodysuit-front_1024x1024@2x.jpg", price: 313, badges: [{ text: "Only 30% oxygen polution", font_size: "16px", line_height: "18px", width: "90px" }, { text: "AIDS free", font_size: "24px", line_height: "25px", width: "60px" }] }
